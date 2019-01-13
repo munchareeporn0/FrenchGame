@@ -138,6 +138,8 @@ export class LoginPage {
 
   login() {
     let authenUrl = getOAuthAuthenUrl();
+    console.log(authenUrl);
+    
     return new Promise((resolve, reject) => {
 
       let isApp = (!document.URL.startsWith('http') || document.URL.startsWith('http://localhost:8080'));
@@ -162,9 +164,14 @@ export class LoginPage {
       }
     });
   }
+  
+  doAfterLogin(responseData){
+    console.log('doAfterLogin');
+    
+  }
 
-  doAfterLogin(responseData) {
-    let cheackid = 0;
+  doAfterLogin2(responseData) {
+    let checkid = 0;
     this.data2 = {data: null}
     if (responseData) {
       this.data2.data = {
@@ -198,10 +205,10 @@ export class LoginPage {
             for (let i = 0; i < stageTable.length; i++) {
               if (stageTable[i].id == this.data2.data.StudentCode) {
                 this.setName();
-                cheackid = 1;
+                checkid = 1;
               }
             }
-            if (cheackid == 0) {//have data but its new
+            if (checkid == 0) {//have data but its new
               let data1 = stageTable;
               data1.push({
                 id: this.data2.data.StudentCode,
@@ -222,7 +229,7 @@ export class LoginPage {
       });
 
       //score
-      cheackid = 0;
+      checkid = 0;
       this.storage.get('scoreTable').then((scoreTable) => {
         if (this.typeS == "quest") {
           let dataQ = scoreTable;
@@ -242,10 +249,10 @@ export class LoginPage {
             console.log('Your name is', scoreTable);
             for (let i = 0; i < scoreTable.length; i++) {
               if (scoreTable[i].id == this.data2.data.StudentCode) {
-                cheackid = 1;
+                checkid = 1;
               }
             }
-            if (cheackid == 0) {//have data but its new
+            if (checkid == 0) {//have data but its new
               let data1 = scoreTable;
               data1.push({
                 id: this.data2.data.StudentCode,
@@ -272,7 +279,7 @@ export class LoginPage {
 
 
       //item
-      cheackid = 0;
+      checkid = 0;
       this.storage.get('itemTable').then((itemTable) => {
         if (this.typeS == "quest") {
           let dataI = itemTable;
@@ -292,10 +299,10 @@ export class LoginPage {
             console.log('Your name is', itemTable);
             for (let i = 0; i < itemTable.length; i++) {
               if (itemTable[i].id == this.data2.data.StudentCode) {
-                cheackid = 1;
+                checkid = 1;
               }
             }
-            if (cheackid == 0) {//have data but its new
+            if (checkid == 0) {//have data but its new
               let data1 = itemTable;
               data1.push({
                 id: this.data2.data.StudentCode,

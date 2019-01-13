@@ -25,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { DataProvider } from '../providers/data/data';
 import { HttpModule } from '@angular/http';
+import { LoginPageModule } from '../pages/login/login.module';
 import { LoginPage } from '../pages/login/login';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 
 @NgModule({
@@ -43,7 +45,6 @@ import { LoginPage } from '../pages/login/login';
     AvatarPage,
     ModePage,
     PlayPage,
-    LoginPage,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +52,7 @@ import { LoginPage } from '../pages/login/login';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     HttpModule,
+    LoginPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,6 +78,7 @@ import { LoginPage } from '../pages/login/login';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     NativeAudio,
     DataProvider,
+    InAppBrowser,
   ]
 })
 export class AppModule { }
