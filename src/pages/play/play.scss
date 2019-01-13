@@ -1,0 +1,21 @@
+page-play {
+    .bg {
+        background-color: #48508e;
+    }
+    .right {
+        float: right
+    }
+    .pad-row {
+        padding: 30px 40px 30px 40px;
+    }
+    ion-icon {
+        font-size: 40px;
+    }
+    .bottomNav {
+        width: 100%;
+        height: 0px;
+        background: white;
+        overflow: hidden;
+        transition: height 0.5s 0.2s;
+    }
+}

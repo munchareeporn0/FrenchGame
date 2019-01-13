@@ -1,0 +1,93 @@
+page-avatar {
+    .bg {
+        background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
+    }
+    .circle-pic {
+        width: 50px;
+        height: 50px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .test {
+        margin: 2rem 0.2rem;
+    }
+    .center {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-bottom: 5px;
+        height: 100%;
+    }
+    ion-col {
+        padding: 10px 10px 10px 10px;
+    }
+    .three {
+        margin: 0px 42px 0px 42px;
+    }
+    .bg-trans {
+        background-color: rgba(255, 0, 0, 0.3);
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .style-head {
+        padding: 40px 0px 45px 0px;
+    }
+    .btn {
+        display: block;
+        // height: 300px;
+        // width: 300px;
+        border-radius: 50%;
+        border: none;
+        text-align: center;
+        margin: 0px;
+        padding: 20px;
+    }
+    .button1 {
+        background-size: 100%;
+        height: 64px;
+        width: 64px;
+        border: none;
+        border-radius: 50%;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
+    .btn-bg1 {
+        background-image: url('../assets/imgs/01.png');
+    }
+    .btn-bg2 {
+        background-image: url('../assets/imgs/02.png');
+    }
+    .btn-bg3 {
+        background-image: url('../assets/imgs/03.png');
+    }
+    .btn-bg4 {
+        background-image: url('../assets/imgs/04.png');
+    }
+    .btn-bg5 {
+        background-image: url('../assets/imgs/05.png');
+    }
+    .btn-bg6 {
+        background-image: url('../assets/imgs/06.png');
+    }
+    .btn-bg7 {
+        background-image: url('../assets/imgs/07.png');
+    }
+    .btn-bg8 {
+        background-image: url('../assets/imgs/08.png');
+    }
+    .btn-bg9 {
+        background-image: url('../assets/imgs/09.png');
+    }
+    .btn-bg10 {
+        background-image: url('../assets/imgs/10.png');
+    }
+    .btn-bg11 {
+        background-image: url('../assets/imgs/11.png');
+    }
+}

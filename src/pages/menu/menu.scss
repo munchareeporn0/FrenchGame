@@ -1,0 +1,35 @@
+page-menu {
+    // ion-content {
+    //     background: #782591 !important;
+    // }
+    ion-grid {
+        margin-top: 80px;
+    }
+    ion-col {
+        margin: 25px 50px 75px 100px;
+    }
+    .btn {
+        display: inline-block;
+        width: 380px;
+    }
+    .center {
+        text-align: center;
+        align-items: center;
+    }
+    .bg {
+        background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
+    }
+    .try {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-bottom: 15px;
+        height: 100%;
+    }
+    .Absolute-Center {
+        margin: auto;
+        padding-bottom: 35px;
+        left: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,21 @@
+page-mode {
+    .bg {
+        background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
+    }
+    .center {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-bottom: 5px;
+        height: 100%;
+    }
+    ion-col {
+        margin: 25px 50px 75px 100px;
+    }
+    .pad-row {
+        padding: 90px 55px 60px 55px;
+    }
+    .pad-col {
+        padding: 20px 0px 20px 0px;
+    }
+}
