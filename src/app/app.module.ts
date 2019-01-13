@@ -1,6 +1,4 @@
-import { PlayPage } from './../pages/play/play';
-import { ModePage } from './../pages/mode/mode';
-import { AvatarPage } from './../pages/avatar/avatar';
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,12 +8,15 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PlayPage } from './../pages/play/play';
+import { ModePage } from './../pages/mode/mode';
+import { AvatarPage } from './../pages/avatar/avatar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MenuPage } from '../pages/menu/menu';
-import { PlayTopicPage } from '../pages/play-topic/play-topic'; 
+import { PlayTopicPage } from '../pages/play-topic/play-topic';
 import { StudyPage } from './../pages/study/study';
 import { RulesPage } from '../pages/rules/rules';
 import { ProfilePage } from '../pages/profile/profile';
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { DataProvider } from '../providers/data/data';
 import { HttpModule } from '@angular/http';
+import { LoginPage } from '../pages/login/login';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { HttpModule } from '@angular/http';
     AvatarPage,
     ModePage,
     PlayPage,
+    LoginPage,
   ],
   imports: [
     BrowserModule,
@@ -63,15 +66,16 @@ import { HttpModule } from '@angular/http';
     ProfilePage,
     AvatarPage,
     ModePage,
-    PlayPage
+    PlayPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     Storage,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     NativeAudio,
     DataProvider,
   ]
 })
-export class AppModule {}
+export class AppModule { }
