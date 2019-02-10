@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {LoginPage} from '../login/login';
-// import {LoginGuestPage} from '../login-guest/login-guest';
 import {MenuPage} from '../menu/menu';
 
 import {Storage} from '@ionic/storage';

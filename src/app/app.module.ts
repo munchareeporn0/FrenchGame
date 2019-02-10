@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PlayPage } from './../pages/play/play';
 import { ModePage } from './../pages/mode/mode';
-import { AvatarPage } from './../pages/avatar/avatar';
+import {AvatarPage} from './../pages/avatar/avatar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,6 +28,8 @@ import { HttpModule } from '@angular/http';
 import { LoginPageModule } from '../pages/login/login.module';
 import { LoginPage } from '../pages/login/login';
 import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { IntroPage } from '../pages/intro/intro';
+import { TypePage } from '../pages/type/type';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
     AvatarPage,
     ModePage,
     PlayPage,
+    IntroPage,
+    TypePage
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,10 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
     HttpClientModule,
     HttpModule,
     LoginPageModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+    driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,7 +77,9 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
     AvatarPage,
     ModePage,
     PlayPage,
-    LoginPage
+    LoginPage,
+    IntroPage,
+    TypePage
   ],
   providers: [
     StatusBar,

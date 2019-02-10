@@ -1,6 +1,7 @@
 import { MenuPage } from '../menu/menu';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the PlayPage page.
@@ -15,105 +16,69 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'play.html',
 })
 export class PlayPage {
-
+  key:string = 'question';
+  noQuestions:any;
+  keepQuestions:any;
+  question:any;
+  answer:any;
+  choice1:any;
+  choice2:any;
+  choice3:any;
+  choice4:any;
+  randChoice = [0,1,2,3];
+  count = 0;
   q_no = 0;
 
-  questions = [
-    'Question 1',
-    'Question 2',
-    'Question 3',
-    'Question 4',
-    'Question 5',
-    'Question 6',
-    'Question 7',
-    'Question 8',
-    'Question 9',
-    'Question 10',
-    'Question 11',
-    'Question 12',
-    'Question 13',
-    'Question 14',
-    'Question 15',
-    'Question 16',
-    'Question 17',
-    'Question 18',
-    'Question 19',
-    'Question 20'
-  ]
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage: Storage) {  
 
-  answers = [
-    [false, true, false, false],
-    [false, false, true, false],
-    [false, false, true, false],
-    [false, false, true, false],
-    [false, true, false, false],
-    [false, true, false, false],
-    [true, false, false, false],
+    this.count= navParams.get('newCount');
     
-    [false, false, false, true],
-    [false, false, true, false],
-    [false, true, false, false],
-    [false, false, true, false],
-    [false, true, false, false],
-    [false, false, true, false],
-    [false, false, true, false],
-    [false, false, true, false],
-    [false, false, true, false],
-    [false, true, false, false],
-    [true, false, false, false],
-    [true, false, false, false],
-    [false, false, false, true],
-  ]
+    
+    if(this.count == null){
 
-  question: number = 0;
-  answer: number = 0;
+      this.keepQuestions = navParams.get('listOfQuestion');
+      this.noQuestions = navParams.get('noQuestions');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.storage.set('randQuestions',this.keepQuestions);
+
+      this.question = this.keepQuestions[this.q_no]['question'];
+      this.answer = this.keepQuestions[this.q_no]['answer'];
+      this.choice1 = this.keepQuestions[this.q_no]['choices'][0];
+      this.choice2 = this.keepQuestions[this.q_no]['choices'][1];
+      this.choice3 = this.keepQuestions[this.q_no]['choices'][2];
+      this.choice4 = this.keepQuestions[this.q_no]['choices'][3];
+      
+    }else{
+
+      this.q_no = navParams.get('newNo');
+
+      this.storage.get('randQuestions').then((val) => {
+        this.keepQuestions = val;
+        this.question = this.keepQuestions[this.q_no]['question'];
+        this.answer = this.keepQuestions[this.q_no]['answer'];
+        this.choice1 = this.keepQuestions[this.q_no]['choices'][0];
+        this.choice2 = this.keepQuestions[this.q_no]['choices'][1];
+        this.choice3 = this.keepQuestions[this.q_no]['choices'][2];
+        this.choice4 = this.keepQuestions[this.q_no]['choices'][3];
+      });
+    }
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PlayPage');
-  }
-
-  verifyAnswer(choice) {
-    console.log(choice, this.answers[this.q_no][choice])
+  verifyAnswer(q_no) {
 
     if (this.q_no < 19) { 
       this.q_no += 1; 
-      // this.alert(this.answers[this.q_no][choice]);
+      this.count += 1;
+      this.navCtrl.push(PlayPage,{
+        newNo:this.q_no,
+        newCount:this.count
+      });
     }
     else
-      this.navCtrl.push(MenuPage);
+      console.log('DONE');
   }
 
-  // alert(result) {
-    
-  // }
-
-  // alert(htmlClass, innerhtml) {
-  //   let alert = $('.alert');
-  //   let alertBox = $('.alert-box');
-  //   let delay = 0;
-  //   let clear = () => {
-  //     alertBox.removeClass('show');
-  //     setTimeout(() => {
-  //       alert.removeClass(htmlClass);
-  //     }, 500);
-  //   }
-
-  //   if (alertBox.hasClass('show')) {
-  //     clearTimeout(this.timer);
-  //     clear();
-  //     delay = 500;
-  //   }
-  //   setTimeout(() => {
-  //     alert.html(innerhtml).addClass(htmlClass);
-  //     alertBox.addClass('show');
-  //     this.timer = setTimeout(() => {
-  //       clear();
-  //     }, 3000);
-  //   }, delay)
-  // }
 }
 
 

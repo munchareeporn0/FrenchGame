@@ -4,8 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MenuPage } from '../pages/menu/menu';
-import { AvatarPage } from '../pages/avatar/avatar';
+import {AvatarPage} from '../pages/avatar/avatar';
 import { HomePage } from '../pages/home/home';
+import { TypePage } from '../pages/type/type';
+import { PlayPage } from '../pages/play/play';
 
 
 
@@ -13,7 +15,7 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = TypePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

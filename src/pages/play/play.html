@@ -16,30 +16,30 @@
 <ion-content padding>
     <ion-grid>
         <ion-row>
-            <ion-col col-12 col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
+            <ion-col col-12 >
                 <h5 ion-text class="right">{{ q_no+1 }}/20</h5>
             </ion-col>
         </ion-row>
         <ion-row padding>
-            <ion-col col-12 col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <h2 ion-text>Q: C'est ton disque ?</h2>
+            <ion-col col-12>
+                <h2 ion-text>{{question}}</h2>
             </ion-col>
-            <ion-col col-12 col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <h2 ion-text>A: Oui, c'est _________.</h2>
+            <ion-col col-12 >
+                <h2 ion-text>{{answer}}</h2>
             </ion-col>
         </ion-row>
         <ion-row class="pad-row">
-            <ion-col col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <button ion-button block item-start default color="primary" (click)='verifyAnswer(0)'>le mien</button>
+            <ion-col col-12>
+                <button ion-button block item-start default color="primary" (click)='verifyAnswer(q_no)'>{{choice1}}</button>
             </ion-col>
-            <ion-col col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <button ion-button block item-start default color="primary" (click)='verifyAnswer(1)'>la mienne</button>
+            <ion-col col-12>
+                <button ion-button block item-start default color="primary" (click)='verifyAnswer(q_no)'>{{choice2}}</button>
             </ion-col>
-            <ion-col col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <button ion-button block item-start default color="primary" (click)='verifyAnswer(2)'>les miens</button>
+            <ion-col col-12>
+                <button ion-button block item-start default color="primary" (click)='verifyAnswer(q_no)'>{{choice3}}</button>
             </ion-col>
-            <ion-col col-12 col-sm-12 col-lg-12 col-xl-12 col-md-12>
-                <button ion-button block item-start default color="primary" (click)='verifyAnswer(3)'>les miennes</button>
+            <ion-col col-12>
+                <button ion-button block item-start default color="primary" (click)='verifyAnswer(q_no)'>{{choice4}}</button>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -48,7 +48,5 @@
           </button>
         </ion-row>
     </ion-grid>
-    <!-- <div class="d-flex bottomNav {{alert()?'show':''}}">
-        <button>บันทึก</button>
-    </div> -->
+
 </ion-content>
