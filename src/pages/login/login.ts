@@ -150,7 +150,7 @@ export class LoginPage {
 
         let listener = browser.on('loadstart').subscribe((event: any) => {
           //Check the redirect uri
-          if (event.url.indexOf('oauth/success') > -1) {
+          if (event.url.indexOf('oauth-success') > -1) {
             listener.unsubscribe();
             browser.close();
             let access_token = event.url.split('=')[1].split('&')[0];
@@ -329,7 +329,7 @@ export class LoginPage {
   }
 
   getUserWithAccessToken(access_token) {
-    this.http.get(OAUTH_REDIRECT_URI + '/api/getUser?access_token=' + access_token)
+    this.http.get(OAUTH_REDIRECT_URI + '/getUser?access_token=' + access_token)
       .subscribe(
         (response) => {
           console.log(response)

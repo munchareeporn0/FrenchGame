@@ -15,7 +15,7 @@ import { PlayPage } from '../pages/play/play';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TypePage;
+  rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
