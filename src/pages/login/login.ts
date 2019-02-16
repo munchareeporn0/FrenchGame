@@ -12,7 +12,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {MenuPage} from '../menu/menu';
 import {JwksValidationHandler, OAuthService} from 'angular-oauth2-oidc';
 import {InAppBrowser} from "@ionic-native/in-app-browser";
-import {getOAuthAuthenUrl, getOAuthAuthenUrlMobile, OAUTH_REDIRECT_URI} from "../../app/app.config";
+import {getOAuthAuthenUrl, getOAuthAuthenUrlMobile, OAUTH_REDIRECT_URI, OAUTH_URI} from "../../app/app.config";
 
 /**
  * Generated class for the LoginPage page.
@@ -137,7 +137,9 @@ export class LoginPage {
   };
 
   login() {
+    console.log("Hello From Login");
     let authenUrl = getOAuthAuthenUrl();
+
     console.log(authenUrl);
     
     return new Promise((resolve, reject) => {
@@ -329,11 +331,13 @@ export class LoginPage {
   }
 
   getUserWithAccessToken(access_token) {
-    this.http.get(OAUTH_REDIRECT_URI + '/getUser?access_token=' + access_token)
+    console.log("Hello from UserWithAccessToken");
+    console.log(access_token);
+    this.http.get(OAUTH_URI + '/getUser?access_token=' + access_token)
       .subscribe(
         (response) => {
           console.log(response)
-          this.doAfterLogin(response)
+          // this.doAfterLogin(response)
         },
           error => console.log(error))
   }

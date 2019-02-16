@@ -1,12 +1,14 @@
 export const OAUTH_LOGIN_URL = 'https://oauth.cmu.ac.th/v1/Authorize.aspx';
 export const OAUTH_TOKEN_URL = 'https://oauth.cmu.ac.th/v1/GetToken.aspx';
-export const OAUTH_CLIENT_ID = '9rqMCFuBdCAJJpK3pJbdse2qvuzTwBQRWj8Z02ej';
-export const OAUTH_CLIENT_SECRET = 'kUYa77PQeKhqzXE4y9sjgMfNYWZzrWcxD23Ht2tx';
-export const OAUTH_REDIRECT_URI = 'https://us-central1-frenchgame-228900.cloudfunctions.net/oauth-logi';
+export const OAUTH_CLIENT_ID = 'RkgQJX53W2a00NbyeQcpbHj2uKAYJ61U2PCX30dM';
+export const OAUTH_CLIENT_SECRET = 'MaZaV7NvFKDQEAphbqw9whuZbt8njrErMBPaUhhx';
+export const OAUTH_REDIRECT_URI = 'https://us-central1-frenchgame-228900.cloudfunctions.net/oauth-login';
+
+export const OAUTH_URI = 'https://us-central1-frenchgame-228900.cloudfunctions.net';
 export const OAUTH_SCOPE = 'cmuitaccount.basicinfo'; 
 const CRYPTO_KEY = 'A5178B6A965AACF3CD60B07A15061719';
 export const SERVER = 'https://www.ljcmu.com';
-//export const SERVER = 'http://localhost:5100';
+// export const SERVER = 'http://localhost:5100';
 import * as crypto from 'crypto-js';
 
 export function getOAuthAuthenUrl() {
