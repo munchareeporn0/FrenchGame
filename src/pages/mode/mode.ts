@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { PlayPage } from '../play/play';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { TypePage } from '../type/type';
 
 /**
  * Generated class for the ModePage page.
@@ -31,13 +32,13 @@ export class ModePage {
     console.log('ionViewDidLoad ModePage');
   }
 
-  goToPlayPage(){
+  goToTypePage(){
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");
     },(error)=>{
       console.log(error);
     });
-    this.navCtrl.push(PlayPage);
+    this.navCtrl.push(TypePage);
   }
 
 }

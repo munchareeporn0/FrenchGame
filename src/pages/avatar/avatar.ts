@@ -6,6 +6,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import 'rxjs/add/operator/toPromise';
 import { MenuPage } from './../menu/menu';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { Storage } from '@ionic/storage';
 import  'rxjs/add/operator/catch';
 
 
@@ -29,13 +30,18 @@ export class AvatarPage {
   avatarID:string;
   randQuestion = [];
   key:string = "username";
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public platform: Platform,private nativeAudio: NativeAudio,public httpClient: HttpClient) {
+  cmuitaccount_name:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public platform: Platform,private nativeAudio: NativeAudio,public httpClient: HttpClient,private storage: Storage) {
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/avatar.wav').then((success)=>{
         console.log("success");
       },(error)=>{
         console.log(error);
       });
+    });
+
+    this.storage.get('cmuitaccount_name').then((val) => {
+      this.cmuitaccount_name = val;
     });
   }
 
@@ -45,55 +51,32 @@ export class AvatarPage {
     },(error)=>{
       console.log(error);
     });
+    
+    // console.log('avatar ID = ',avatarID);
+    // console.log('cmuitaccount_name = ',this.cmuitaccount_name);
+
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
     let requestOptions = new RequestOptions({ headers: headers });
-
+    
     let postParams = {
       "content":{
-          "Topic" : "Possessive",
-          "level" : "1"
-        }
+        "cmuitaccount_name": this.cmuitaccount_name,
+        "avatar":avatarID
+      }
     }
     
-    this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res.json()).
-      subscribe(data => {
-        this.data = data;
-        // var item = this.data[Math.floor(Math.random()*this.data.length)];
-        
-        var _size = Object.keys(this.data).length;
-        var mark:boolean[] = new Array(_size);
-
-        // console.log(mark[1]);
-
-        for(var i=0;i<20;i++){       
-          var rand;
-          do{
-            rand = Math.floor(Math.random()*_size); 
-          } while(mark[rand] != null);
-          mark[rand] = true;
-          this.randQuestion[i] = rand;
-        }
-        
-        for(var i=0;i<20;i++){
-        console.log(this.randQuestion[i])
-        console.log(this.data[this.randQuestion[i]]);
-        }
-        
-        // this.cards.rd = this.cards[Math.floor(Math.random() * this.cards.length)];
-        // console.log(this.cards.rd);
-        // (err) => {
-        //   alert("failed loading json data");
-        // }
-      })  
+    this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/updateAvatar", postParams, requestOptions).map(res => res.json()).
+      subscribe(response => {
+        console.log(response);
+      });  
+      
+    this.storage.set('avatar', avatarID);
     
-    // subscribe(data => {
-    //     console.log(data);
-    //     // this.navCtrl.push(MenuPage);
-    //    }, error => {
-    //     console.log(error);// Error getting the data
-    //   });
+      setTimeout(() => {
+        this.navCtrl.push(MenuPage);
+      }, 900);
   }
 
   ionViewDidLoad() {
