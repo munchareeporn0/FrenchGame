@@ -8,6 +8,7 @@ import {AvatarPage} from '../pages/avatar/avatar';
 import { HomePage } from '../pages/home/home';
 import { TypePage } from '../pages/type/type';
 import { PlayPage } from '../pages/play/play';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 

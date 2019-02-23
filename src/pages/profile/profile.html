@@ -6,13 +6,27 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar> 
     <ion-title>Profile</ion-title>
   </ion-navbar>
-
+  
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-grid no-padding col-12 class="row-bg1">
+    <ion-row padding col-12>
+      <ion-img class="circle-pic" width="180" height="180" src="assets/imgs/01.png"></ion-img>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid no-padding col-12 class="row-bg2">
+    <ion-row padding col-12 class="lable">
+        <h5>Login With</h5>
+        <h5>{{mail}}</h5>
+        <h5>{{name}}</h5>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
