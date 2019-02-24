@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { PlayPage } from '../play/play';
 import { NativeAudio } from '@ionic-native/native-audio';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HTTP } from '@ionic-native/http';
-import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/toPromise';
 import  'rxjs/add/operator/catch';
@@ -46,7 +44,7 @@ export class TypePage {
 
     let postParams = {
       "content":{
-          "Topic" : "Possessive",
+          "Topic" : "possessive",
           "level" : "1"
         }
     }
@@ -68,6 +66,7 @@ export class TypePage {
 
     this.storage.get(this.key).then((val) => {
       this.data = val;
+      console.log(this.data);
       var _size = Object.keys(this.data).length;
       var mark:boolean[] = new Array(_size);
       var condition:boolean;

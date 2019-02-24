@@ -10,6 +10,7 @@ import { TypePage } from '../pages/type/type';
 import { PlayPage } from '../pages/play/play';
 import { ProfilePage } from '../pages/profile/profile';
 import { IntroPage } from '../pages/intro/intro';
+import { PlayTopicPage } from '../pages/play-topic/play-topic';
 
 
 
@@ -17,7 +18,7 @@ import { IntroPage } from '../pages/intro/intro';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = IntroPage;
+  rootPage:any = PlayTopicPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

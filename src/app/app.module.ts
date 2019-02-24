@@ -53,10 +53,10 @@ import { MenuPageModule } from '../pages/menu/menu.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     MenuPageModule,
-    HttpClientModule,
     HttpModule,
     LoginPageModule,
     IonicStorageModule.forRoot({

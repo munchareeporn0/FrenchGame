@@ -179,6 +179,9 @@ export class LoginPage {
   
   doAfterLogin(responseData){
     var name:string;
+
+
+
     if (responseData){
       this.data = responseData;
     }
@@ -198,6 +201,7 @@ export class LoginPage {
 
   }
 
+
   setData() {
     var name:string;
     name = this.data['prename_EN'].concat(' ',this.data['firstname_EN'],' ', this.data['lastname_EN']);
@@ -205,6 +209,7 @@ export class LoginPage {
     this.storage.set('cmuitaccount_name',this.data['cmuitaccount_name']);
     this.storage.set('cmuitaccount',this.data['cmuitaccount']);
     this.storage.set('avatar', this.data['avatar']);
+
   };
 
   ionViewDidLoad() {
