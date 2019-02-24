@@ -200,7 +200,7 @@ export class LoginPage {
 
   setData() {
     var name:string;
-    name = this.data['prename_TH'].concat(' ',this.data['firstname_TH'],' ', this.data['lastname_TH']);
+    name = this.data['prename_EN'].concat(' ',this.data['firstname_EN'],' ', this.data['lastname_EN']);
     this.storage.set('name',name);
     this.storage.set('cmuitaccount_name',this.data['cmuitaccount_name']);
     this.storage.set('cmuitaccount',this.data['cmuitaccount']);

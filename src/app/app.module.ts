@@ -30,6 +30,8 @@ import { LoginPage } from '../pages/login/login';
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { IntroPage } from '../pages/intro/intro';
 import { TypePage } from '../pages/type/type';
+import { MenuPageModule } from '../pages/menu/menu.module';
+
 
 
 @NgModule({
@@ -39,7 +41,6 @@ import { TypePage } from '../pages/type/type';
     ContactPage,
     HomePage,
     TabsPage,
-    MenuPage,
     PlayTopicPage,
     StudyPage,
     RulesPage,
@@ -54,6 +55,7 @@ import { TypePage } from '../pages/type/type';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    MenuPageModule,
     HttpClientModule,
     HttpModule,
     LoginPageModule,
@@ -66,10 +68,10 @@ import { TypePage } from '../pages/type/type';
   entryComponents: [
     MyApp,
     AboutPage,
+    MenuPage,
     ContactPage,
     HomePage,
     TabsPage,
-    MenuPage,
     PlayTopicPage,
     StudyPage,
     RulesPage,
