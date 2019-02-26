@@ -166,8 +166,6 @@ export class LoginPage {
   }
 
   getUserWithAccessToken(access_token) {
-    console.log("Hello from UserWithAccessToken");
-    console.log(access_token);
     this.http.get(OAUTH_URI + '/getUser?access_token=' + access_token)
       .subscribe(
         (response) => {
@@ -191,6 +189,8 @@ export class LoginPage {
 
     setTimeout(() => {
 
+      this.loading = false;
+      
       if(this.data['avatar'] == null){
         this.navCtrl.push(AvatarPage);
       }else{

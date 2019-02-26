@@ -49,10 +49,10 @@ export class IntroPage {
     this.getTopic();
     // this.getQuestions();
 
-    setTimeout(() => {
-      this.loading = false;
-      document.getElementById('btn-login').hidden = false;
-    }, 2500); 
+    // setTimeout(() => {
+    //   this.loading = false;
+    //   document.getElementById('btn-login').hidden = false;
+    // }, 2500); 
         
   }
   
@@ -66,7 +66,7 @@ export class IntroPage {
     .subscribe((data) => {
       this.data = data;
       this.storage.set('topic',this.data); 
-      this.size = Object.keys(this.data).length;
+      // this.size = Object.keys(this.data).length;
       for(let i in data){
         for(let level = 1; level <= IntroPage.MAX_LEVEL; level++){
           let _level = level.toString();
@@ -76,45 +76,27 @@ export class IntroPage {
                 "level" : _level
               }
           }
-            data: JSON.stringify(data)
-          this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res)
+          this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res.json())
           .subscribe(res => {  
-            this.data = res['_body'];
-            // this.data = JSON.parse(this.data);
-            console.log("post = ",postParams);
-            console.log(this.data);   
+            this.data = res;
+            // console.log("post = ",postParams);
+            // console.log(this.data);   
             this.storage.set(`${i}_${level}`,this.data);  
           }) 
         }
-        // console.log(i);
-        // console.log(data[i]);
       }
-
       
-      // console.log("ID = ",this.data[0]['id']);
-      // console.log("size = ",this.size);
+      setTimeout(() => {
+        this.loading = false;
+        document.getElementById('btn-login').hidden = false;
+      }, 1000); 
     });
-    // setTimeout(() => {
-    //   console.log("data = ",this.data);
-      
-    //   console.log("size = ",this.size);
-      
-    // }, 1800); 
   }
-
-  // getQuestions(){
-  //   var topic = new Array(this.size);
-  //   for(var i=0; i<this.size; i++){
-  //     topic[i] = this.data[i]['id'];
-  //   }
-  // }
   
   openlogin() {
     if (!this.cheackQ) {
       this.storage.get('cmuitaccount_name').then((id) => {
-        console.log('cmuitaccount_name is', id);
         if (id == null) {
-          console.log('cmuitaccount_name is', id);
           this.navCtrl.push('LoginPage');
         } else {
           this.navCtrl.push('MenuPage');

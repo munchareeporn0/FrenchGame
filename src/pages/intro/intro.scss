@@ -8,4 +8,12 @@ page-intro {
         stroke: #444;
         fill: #222;
       }
+    .loading {
+        height: 100%;
+        margin-top:auto;
+        margin-bottom: auto; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

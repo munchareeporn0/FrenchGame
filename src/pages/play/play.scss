@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Comfortaa', cursive;
+    @import url('https://fonts.googleapis.com/css?family=Comfortaa&amp;‌​subset=greek,latin-e‌​xt');
+}
+body,
+span,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ion-item,
+ion-title {
+    font-family: 'Comfortaa', cursive;
+}
+
 page-play {
     .bg {
         background-color: #48508e;

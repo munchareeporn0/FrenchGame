@@ -5,7 +5,12 @@
   Ionic pages and navigation.
 -->
 
-<ion-content padding>
-  <ion-spinner color="circles" name="circles" *ngIf="loading" >Loading</ion-spinner>
-  <button ion-button button button-balanced color="info" (click)="openlogin()" hidden id="btn-login" hidden>Login with CMU mail</button>
+<ion-content padding >
+
+  <ion-row class="loading">
+    <ion-spinner color="circles" name="circles" *ngIf="loading" >Loading</ion-spinner>
+    <button ion-button button button-balanced color="info" (click)="openlogin()" hidden id="btn-login" hidden>Login with CMU mail</button>
+  </ion-row>
+  
+
 </ion-content>

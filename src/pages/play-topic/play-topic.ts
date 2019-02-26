@@ -28,20 +28,25 @@ export class PlayTopicPage {
       });
     });
     this.storage.get('topic').then((val) => {
-      this.topics = Object.values(val);
-      console.log(this.topics);
+      this.topics = (<any>Object).values(val);
     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlayTopicPage');
   }
-  goToModePage(){
+  goToModePage(topic:string){
+
+    console.log(topic);
+
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");
     },(error)=>{
       console.log(error);
     });
-    this.navCtrl.push(ModePage);
+
+    this.navCtrl.push(ModePage,{
+      topic:topic
+    });
   }
 }

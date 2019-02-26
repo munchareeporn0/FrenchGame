@@ -21,52 +21,60 @@ import  'rxjs/add/operator/catch';
   templateUrl: 'mode.html',
 })
 export class ModePage {
+  topic:string;
   data :any;
   key:string = "question";
+  questions:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio, public http: Http,private storage: Storage) {
+
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/ding.mp3').then((success)=>{
         console.log("success");
       },(error)=>{
         console.log(error);
       });
-      // this.setQuestion();
     });
+    this.topic = navParams.get('topic');
+    console.log("topic from ModePage = ",this.topic);
   }
-
-  // setQuestion(){
-  //   var headers = new Headers();
-  //   headers.append("Accept", 'application/json');
-  //   headers.append('Content-Type', 'application/json' );
-  //   let requestOptions = new RequestOptions({ headers: headers });
-
-  //   let postParams = {
-  //     "content":{
-  //         "Topic" : "possessive",
-  //         "level" : "1"
-  //       }
-  //   }
-    
-  //   this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res.json()).
-      
-  //   subscribe(data => {
-  //       this.data = data;        
-  //       this.storage.set(this.key,this.data);  
-  //     }) 
-  // }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModePage');
   }
 
-  goToTypePage(){
+  goToPlayPage(mode:string){
+    
+    let key:string;
+
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");
     },(error)=>{
       console.log(error);
     });
-    this.navCtrl.push(TypePage);
+
+    key = `${this.topic}_${mode}`;
+
+    this.navCtrl.push(PlayPage,{
+      key:key
+    });
+    
+    // this.storage.get(`${this.topic}_${mode}`).then((val) => {
+    //   this.questions = val;
+    //   if(val == null){
+    //     console.log('Sorry');
+    //   }else {
+    //     console.log(`${this.topic}_${mode}`);
+    //     this.navCtrl.push(PlayPage,{
+    //       questions:this.questions
+    //     });
+    //   }    
+    // });
+
+    // setTimeout(() => {
+    //   console.log(`${this.topic}_${mode}`);
+    //   console.log(this.questions);
+    // }, 1000); 
+
   }
 
 }
