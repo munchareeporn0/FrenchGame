@@ -52,10 +52,10 @@ export class ModePage {
       console.log(error);
     });
 
-    key = `${this.topic}_${mode}`;
 
     this.navCtrl.push(PlayPage,{
-      key:key
+      topic :this.topic,
+      mode  :mode
     });
     
     // this.storage.get(`${this.topic}_${mode}`).then((val) => {

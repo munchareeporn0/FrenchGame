@@ -47,12 +47,6 @@ export class IntroPage {
  
     this.loading = true;
     this.getTopic();
-    // this.getQuestions();
-
-    // setTimeout(() => {
-    //   this.loading = false;
-    //   document.getElementById('btn-login').hidden = false;
-    // }, 2500); 
         
   }
   
