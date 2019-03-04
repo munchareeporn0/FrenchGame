@@ -4,25 +4,31 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
-    <ion-navbar>
-        <ion-title text-center>Select Mode</ion-title>
+    <ion-navbar color="white">
+        <ion-row no-padding>
+            <ion-col no-padding col-10>
+            <h2 text-center class="text-nav">Select Mode</h2>
+            </ion-col>
+            <ion-col no-padding ccol-2>
+
+            </ion-col>
+         </ion-row>
     </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding class="bg">
     <ion-row class="pad-row">
         <ion-col class="pad-col" col-12 >
-            <button ion-button button button-balanced block round large color="info" (click)='goToPlayPage(1)'> EASY </button>
+            <button ion-button block round large color="info" id="1" (click)='goToPlayPage(1)' [disabled]="disableButton[0]"> EASY </button>
         </ion-col>
         <ion-col class="pad-col" col-12 >
-            <button ion-button button button-balanced block round large color="info" (click)='goToPlayPage(2)'> NORMAL </button>
+            <button ion-button block round large color="info" id="2" (click)='goToPlayPage(2)' [disabled]="disableButton[1]"> NORMAL </button>
         </ion-col>
         <ion-col class="pad-col" col-12 >
-            <button ion-button button button-balanced block round large color="info" (click)='goToPlayPage(3)'> HARD </button>
+            <button ion-button block round large color="info" id="3" (click)='goToPlayPage(3)' [disabled]="disableButton[2]"> HARD </button>
         </ion-col>
     </ion-row>
 </ion-content>

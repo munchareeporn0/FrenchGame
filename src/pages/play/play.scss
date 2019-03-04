@@ -5,6 +5,7 @@
 body,
 span,
 button,
+label,
 h1,
 h2,
 h3,
@@ -36,5 +37,29 @@ page-play {
         background: white;
         overflow: hidden;
         transition: height 0.5s 0.2s;
+    }
+
+    .text-nav{
+        font-weight: normal;
+        color: rgb(255, 255, 255);
+        margin-top: 1.3rem;
+    }
+
+    #notification-button {            
+        position: relative;
+        width: 55px;
+        height: 46px;
+        top:1px;
+        right: 1px;
+        overflow: visible!important;
+    }
+
+
+    #notifications-badge {
+        background-color: #00b33c;
+        position: absolute;
+        top: 0.1px;
+        right: -0.4px;
+        border-radius: 100%;
     }
 }

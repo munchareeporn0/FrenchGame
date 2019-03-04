@@ -18,12 +18,18 @@ import { Storage } from '@ionic/storage';
 export class ProfilePage {
   name:string;
   mail:string;
+  avatar:string;
+  id_avatar:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     this.storage.get('name').then((val) => {
       this.name = val;
     });
     this.storage.get('cmuitaccount').then((val) => {
       this.mail = val;
+    });
+    this.storage.get('avatar').then((val) => {
+      this.id_avatar = val;
+      this.avatar = `assets/imgs/${this.id_avatar}.png`;
     });
   }
   

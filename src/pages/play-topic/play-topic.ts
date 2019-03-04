@@ -30,6 +30,16 @@ export class PlayTopicPage {
     this.storage.get('topic').then((val) => {
       this.topics = (<any>Object).values(val);
     });
+    
+    // this.topics.forEach(element => {
+    //   for(let i = 0; i < element['id'].length; i++){
+    //     console.log(element['id'][i])
+    //     for(let j = 0; j < element['level'].length; j++){
+    //       console.log(element['level'][j])
+    //     }
+    //   }
+    //   });
+   
   }
 
   ionViewDidLoad() {

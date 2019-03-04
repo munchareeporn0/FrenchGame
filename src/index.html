@@ -29,12 +29,23 @@
   </script>-->
 
     <link href="build/main.css" rel="stylesheet">
+    <style>
+    @media only screen and (min-width: 1025px) {
+        .custom-col {
+            width: 70% !important; 
+            margin-left: auto;
+            margin-right: auto;
+            position: static !important;
+        }
+    }
+    </style>
 </head>
 
 <body>
 
     <!-- Ionic's root component and where the app will load -->
-    <ion-app></ion-app>
+    <ion-app no-padding class="custom-col">
+    </ion-app>
 
     <!-- The polyfills js is generated during the build process -->
     <script src="build/polyfills.js"></script>

@@ -23,10 +23,12 @@ import  'rxjs/add/operator/catch';
 export class ModePage {
   topic:string;
   data :any;
-  key:string = "question";
+  key:string;
+  check_Q:any;
   questions:any;
+  disableButton:boolean [] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio, public http: Http,private storage: Storage) {
-
+    this.disableButton = [false,false,false];
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/ding.mp3').then((success)=>{
         console.log("success");
@@ -34,18 +36,23 @@ export class ModePage {
         console.log(error);
       });
     });
-    this.topic = navParams.get('topic');
-    console.log("topic from ModePage = ",this.topic);
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModePage');
+    this.topic = navParams.get('topic');
+
+    for(let i = 0; i < 3; i++){
+      this.key = `${this.topic}_${i + 1}`;
+      this.storage.get(this.key).then((val) => {
+        this.check_Q = (<any>Object).keys(val);
+        if(this.check_Q[0] == null){
+          this.disableButton[i] = true;
+        }
+      });
+    }    
+    
   }
 
   goToPlayPage(mode:string){
     
-    let key:string;
-
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");
     },(error)=>{
@@ -57,23 +64,6 @@ export class ModePage {
       topic :this.topic,
       mode  :mode
     });
-    
-    // this.storage.get(`${this.topic}_${mode}`).then((val) => {
-    //   this.questions = val;
-    //   if(val == null){
-    //     console.log('Sorry');
-    //   }else {
-    //     console.log(`${this.topic}_${mode}`);
-    //     this.navCtrl.push(PlayPage,{
-    //       questions:this.questions
-    //     });
-    //   }    
-    // });
-
-    // setTimeout(() => {
-    //   console.log(`${this.topic}_${mode}`);
-    //   console.log(this.questions);
-    // }, 1000); 
 
   }
 

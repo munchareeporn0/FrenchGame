@@ -1,9 +1,24 @@
 page-play-topic {
     .bg {
-        background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
+        background: linear-gradient(to bottom, #48508E 0%, #CE5959 100%)
     }
     .bg-w {
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .btnTopic{
+        width: 165px;
+    }
+    .text-nav{
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        margin-top: 1.3rem;
+    }
+    .col-topic{
+        text-align:center;
+    }
+    center {
+        text-align: center;
+        align-items: center;
     }
     
 }

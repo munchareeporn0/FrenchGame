@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
 import {LoginPage} from '../login/login';
 import {MenuPage} from '../menu/menu';
+import { AlertController } from 'ionic-angular';
 import { timeout } from 'rxjs/operator/timeout';
 import { HTTP } from '@ionic-native/http';
 import { Response } from '@angular/http';
@@ -34,7 +35,8 @@ export class IntroPage {
   loading:boolean = false;
   public static MAX_LEVEL = 3;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,private httpClient: HttpClient,private http:Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage
+              ,private httpClient: HttpClient,private http:Http,private Alert: AlertController,) {
     this.storage.get('id').then((id) => {
       if (id != null) {
         this.cheackS = true;
@@ -44,11 +46,12 @@ export class IntroPage {
   }
 
   ionViewWillEnter(){
- 
     this.loading = true;
     this.getTopic();
         
   }
+  
+
   
   getTopic(){
     var headers = new Headers();
@@ -73,10 +76,24 @@ export class IntroPage {
           this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res.json())
           .subscribe(res => {  
             this.data = res;
-            // console.log("post = ",postParams);
-            // console.log(this.data);   
             this.storage.set(`${i}_${level}`,this.data);  
-          }) 
+          }),err =>{
+    
+              let alert = this.Alert.create({
+                title: 'Oops! Sorry :(',
+                message: 'An error occurred. Please try again later',
+                buttons: [
+                  {
+                    text: 'OK',
+                    handler: () => {
+                      console.log('OK');
+                    }
+                  }
+                ]
+              });
+              alert.present(alert);
+          }
+           
         }
       }
       
@@ -90,11 +107,7 @@ export class IntroPage {
   openlogin() {
     if (!this.cheackQ) {
       this.storage.get('cmuitaccount_name').then((id) => {
-        if (id == null) {
-          this.navCtrl.push('LoginPage');
-        } else {
-          this.navCtrl.push('MenuPage');
-        }
+        this.navCtrl.push(id == null?'LoginPage':'MenuPage');
       });
     } else {
       this.navCtrl.setRoot('MenuPage');

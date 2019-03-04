@@ -31,6 +31,7 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { IntroPage } from '../pages/intro/intro';
 import { TypePage } from '../pages/type/type';
 import { MenuPageModule } from '../pages/menu/menu.module';
+import { RankingPage } from '../pages/ranking/ranking';
 
 
 
@@ -49,7 +50,8 @@ import { MenuPageModule } from '../pages/menu/menu.module';
     ModePage,
     PlayPage,
     IntroPage,
-    TypePage
+    TypePage,
+    RankingPage,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ import { MenuPageModule } from '../pages/menu/menu.module';
     PlayPage,
     LoginPage,
     IntroPage,
-    TypePage
+    TypePage,
+    RankingPage
   ],
   providers: [
     StatusBar,

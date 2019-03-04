@@ -1,0 +1,90 @@
+<!--
+  Generated template for the RankingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="white">
+      <ion-row no-padding>
+          <ion-col no-padding col-10>
+          <h2 text-center class="text-nav">Ranking</h2>
+          </ion-col>
+          <ion-col no-padding ccol-2>
+
+          </ion-col>
+       </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    
+      <ion-grid no-padding col-12 class="grid-bg1">
+
+        <ion-row no-padding col-12 class="row-top"  style="box-shadow: 2px 3px 10px #888888;">
+            <ion-col >
+              <ion-grid class="avatar custom-Avatar-grid">
+                <ion-grid no-padding class="sub-grid1"> 
+                  <ion-img class="circle-pic"  src={{avatar}}></ion-img>  
+                </ion-grid>
+                <ion-grid class="sub-grid2">
+                    <h6 style="text-align:center">{{cmuacc}}</h6>
+                </ion-grid>
+              </ion-grid>
+            </ion-col>
+            <ion-col>
+              <ion-grid >
+                <h5 style="color: #ffffff" class="score">Score</h5>
+              </ion-grid>
+              <ion-grid>
+                <h2 style="color: #ffffff" class="score">{{score}}/{{size}}</h2>
+              </ion-grid>
+            </ion-col>
+            <ion-col>
+              <ion-grid>
+                <h5 style="color: #ffffff">Ranking</h5>
+              </ion-grid>
+              <ion-grid>
+                <h2 style="color: #ffffff">{{rank}}</h2>
+              </ion-grid>
+            </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <ion-grid  no-padding col-12 class="grid-bg2">
+
+        <ion-row padding col-12>
+          
+          <ion-grid>
+            <ion-row class="table-head">
+               <ion-col col-2>
+                <h6 class="text-table">Rank</h6>
+                </ion-col>
+               <ion-col col-5>
+                <h6 class="text-table">Avatar</h6>
+              </ion-col>
+               <ion-col col-5>
+                <h6 class="text-table">Score</h6>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="table" *ngFor="let person of persons">
+                <ion-col col-2>
+                  <h6 style ="font-weight: bold;">{{person.rank}}</h6>
+                </ion-col>
+                <ion-col col-5>
+                    <ion-img class="pic-table" src={{person.avatar}}></ion-img>  
+                </ion-col>
+                <ion-col col-5>
+                  <h6 style ="font-weight: bold;">{{person.score}}</h6>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+   
+           </ion-row>
+         </ion-grid>
+        
+   </ion-content>

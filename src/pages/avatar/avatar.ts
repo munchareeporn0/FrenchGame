@@ -31,6 +31,8 @@ export class AvatarPage {
   randQuestion = [];
   key:string = "username";
   cmuitaccount_name:string;
+  disableButton:boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public platform: Platform,private nativeAudio: NativeAudio,public httpClient: HttpClient,private storage: Storage) {
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/avatar.wav').then((success)=>{
@@ -52,8 +54,7 @@ export class AvatarPage {
       console.log(error);
     });
     
-    // console.log('avatar ID = ',avatarID);
-    // console.log('cmuitaccount_name = ',this.cmuitaccount_name);
+    this.disableButton = true;
 
     var headers = new Headers();
     headers.append("Accept", 'application/json');

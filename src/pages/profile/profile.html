@@ -4,33 +4,56 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
-  <ion-navbar> 
-    <ion-title>Profile</ion-title>
-  </ion-navbar>
-  
+    <ion-navbar color="white">
+        <ion-row no-padding>
+            <ion-col no-padding col-10 col-11-md col-11-lg>
+            <h2 text-center class="text-nav">Profile</h2>
+            </ion-col>
+            <ion-col no-padding col-2 col-1-md col-1-lg>
+
+            </ion-col>
+         </ion-row>
+    </ion-navbar>
+
 </ion-header>
-
 
 <ion-content>
 
-  <ion-grid no-padding col-12 class="row-bg1">
+  <ion-grid col-12 class="row-bg1">
     <ion-row padding col-12>
-      <ion-img class="circle-pic" width="180" height="180" src="assets/imgs/01.png"></ion-img>
+      <ion-img class="circle-pic" width="180" height="180" src={{avatar}}></ion-img>
     </ion-row>
   </ion-grid>
 
-  <ion-grid no-padding col-12 class="row-bg2">
-    <ion-row padding col-12 class="lable">
-      <ion-row col-12>
-        <h3>Login With</h3>
-      </ion-row>
-      <ion-row col-12>
-        <h5>{{mail}}</h5>
-      </ion-row>
-        <!-- {{name}} -->
-    </ion-row>
+  <ion-grid col-12 class="row-bg2">
+    <ion-grid padding col-12 class="lable">
+      <ion-grid padding>
+        <h3 class="h3-text">Login With</h3>
+      </ion-grid>
+
+      <ion-grid> 
+        <ion-row>
+          <ion-col col-1>
+            <ion-icon large name="mail"></ion-icon> 
+          </ion-col>
+          <ion-col col-11>
+            <h6>{{mail}}</h6>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-1>
+                <ion-icon large name="person"></ion-icon> 
+            </ion-col>
+            <ion-col col-11>
+              <h6>{{name}}</h6>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-grid>
   </ion-grid>
+
 
 </ion-content>
