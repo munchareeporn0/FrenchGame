@@ -60,27 +60,49 @@
           
           <ion-grid>
             <ion-row class="table-head">
-               <ion-col col-2>
+               <ion-col col-4>
                 <h6 class="text-table">Rank</h6>
                 </ion-col>
                <ion-col col-5>
                 <h6 class="text-table">Avatar</h6>
               </ion-col>
-               <ion-col col-5>
+               <ion-col col-3>
                 <h6 class="text-table">Score</h6>
                 </ion-col>
               </ion-row>
 
               <ion-row class="table" *ngFor="let person of persons">
-                <ion-col col-2>
-                  <h6 style ="font-weight: bold;">{{person.rank}}</h6>
+                <ion-col col-4>
+                  <ion-col *ngIf="person.rank == 1">
+                      <img src="https://img.icons8.com/color/48/000000/medal2.png">
+                  </ion-col>
+                  <ion-col *ngIf="person.rank == 2">
+                      <img src="https://img.icons8.com/color/48/000000/medal-second-place.png">
+                  </ion-col>
+                  <ion-col *ngIf="person.rank == 3">
+                      <img src="https://img.icons8.com/color/48/000000/medal2-third-place.png">
+                  </ion-col>
+                  <ion-col *ngIf="person.rank > 3">
+                      <h6 class="h6-main" style ="font-weight: bold;">{{person.rank}}</h6>
+                  </ion-col>
+                  <!-- <ion-row no-padding>
+                    <ion-col col-2 no-padding *ngIf="person.rank == 1">
+                      <img class="img-1" src="https://img.icons8.com/color/48/000000/fairytale.png">
+                    </ion-col>
+                    <ion-col class="col-rank" no-padding >
+                      <h6 class="h6-main" style ="font-weight: bold;">{{person.rank}}</h6>
+                    </ion-col>
+                  </ion-row> -->
                 </ion-col>
+
                 <ion-col col-5>
                     <ion-img class="pic-table" src={{person.avatar}}></ion-img>  
                 </ion-col>
-                <ion-col col-5>
+
+                <ion-col col-3>
                   <h6 style ="font-weight: bold;">{{person.score}}</h6>
                 </ion-col>
+
               </ion-row>
             </ion-grid>
    

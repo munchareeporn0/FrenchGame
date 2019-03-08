@@ -1,22 +1,4 @@
-@font-face {
-    font-family: 'Comfortaa', cursive;
-    @import url('https://fonts.googleapis.com/css?family=Comfortaa&amp;‌​subset=greek,latin-e‌​xt');
-}
-body,
-span,
-button,
-label,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ion-item,
-ion-title {
-    font-family: 'Comfortaa', cursive;
-}
+
 
 page-play {
     .bg {
@@ -43,6 +25,14 @@ page-play {
         font-weight: normal;
         color: rgb(255, 255, 255);
         margin-top: 1.3rem;
+    }
+
+    .loading {
+        margin-top:auto;
+        margin-bottom: auto; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #notification-button {            

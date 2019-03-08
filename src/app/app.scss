@@ -13,13 +13,13 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @font-face {
-    font-family: 'Jua', sans-serif;
-    @import url('https://fonts.googleapis.com/css?family=Jua');
+    font-family: 'Comfortaa', cursive;
+    @import url('https://fonts.googleapis.com/css?family=Comfortaa&amp;‌​subset=greek,latin-e‌​xt');
 }
-
 body,
 span,
 button,
+label,
 h1,
 h2,
 h3,
@@ -29,5 +29,5 @@ h6,
 p,
 ion-item,
 ion-title {
-    font-family: 'Jua', sans-serif;
+    font-family: 'Comfortaa', cursive;
 }

@@ -1,3 +1,57 @@
-page-rules {
 
+@font-face {
+    font-family: 'Prompt', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Prompt');
+}
+page-rules {
+    h3,
+    h4,
+    h5,
+    h6,{
+        font-family: 'Prompt', sans-serif !important;
+    }
+    .text-nav{
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        margin-top: 1.3rem;
+    }
+    .row-topic{
+        background-color: #F69691;
+        border: none;
+        padding: 5px;
+        border-radius: 6px 25px 25px 6px;
+    }
+    .text-topic{
+        // margin-top: 6px;
+        // margin-bottom: 6px;
+        margin: auto;
+        color: black;
+        padding-top: 3px;
+        margin-left: 25px;
+    }
+    .icon{
+        font-size: 27px;
+        margin-left: 10px;
+        color: black;
+    }
+    .col-topic{
+        text-align: center;
+    }
+    .row-main{
+        padding: 5px 8px 5px 8px;
+    }
+    .text-main{
+        margin: 0px;
+        padding: 5px;
+    }
+    // .bg-main{
+    //     background-color: rgb(255, 230, 230);
+    //     border-radius: 8px;
+    // }
+    .gird-topic{
+        margin-bottom: 5px;
+    }
+    .rule-content{
+        // background-color: rgb(255, 230, 230);
+    }
 }

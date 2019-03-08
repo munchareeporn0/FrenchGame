@@ -12,6 +12,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { IntroPage } from '../pages/intro/intro';
 import { PlayTopicPage } from '../pages/play-topic/play-topic';
 import { RankingPage } from '../pages/ranking/ranking';
+import { RulesPage } from '../pages/rules/rules';
 
 
 

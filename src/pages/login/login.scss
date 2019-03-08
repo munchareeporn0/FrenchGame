@@ -1,10 +1,31 @@
 page-login {
-    .loading {
-        height: 100%;
+    .loading1 {
+        height: 20%;
         margin-top:auto;
         margin-bottom: auto; 
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .loading2 {
+        margin-top:auto;
+        margin-bottom: auto; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .bg{
+        background-color: #242746;
+    }
+    .img-1{
+        border: 0px !important;
+        border-bottom-color: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+        width: 320px;
+        height: 320px;
+        margin: auto;
+        // -webkit-border-radius: 50%;
+        // border-radius: 50%;
     }
 }

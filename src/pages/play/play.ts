@@ -66,10 +66,12 @@ export class PlayPage {
   choices:any;
   others_score:any;
   status:any;
+  dis_btn = 0;
   count = 0;
   q_no = 0;
   size_choice = 0;
 
+  loading:boolean = false;  
   showAlertMessage: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private Alert: AlertController,public nav: NavController
@@ -158,6 +160,15 @@ export class PlayPage {
   verifyAnswer(q_no,_choice) {
 
     let _score = 0;
+    this.dis_btn += 1;
+
+    if(this.dis_btn == 1){
+      for(let i = 0; i < this.size_choice; i++){
+        if(i != _choice){
+          this.disableButton[i] = true;
+        }  
+      }
+    }
 
     if(this.count != null){
       _score  = this.navParams.get('score'); 
@@ -225,6 +236,7 @@ export class PlayPage {
           });
         }, 800); 
     }else{
+      this.loading = true;
       this.score = _score;
         this.updateScore();
     }
@@ -274,6 +286,7 @@ export class PlayPage {
             }
             this.person[i].rank = i + 1;
           }
+          this.loading = false;
 
           this.navCtrl.push(RankingPage,{
             score             :this.score,
@@ -324,8 +337,6 @@ export class PlayPage {
 
       this._hint += 1;
       this.curr_score -= 0.25;
-    }else{
-      console.log('no hint anymore');
     }
   }
 

@@ -8,11 +8,13 @@
 
 <ion-content padding class="bg">
 
-    <ion-grid>
+    <ion-grid class="grid-topic">
         <ion-row class="try">
-            <h1 ion-text color="light">FRENCH GAME</h1>
+            <img class="img-2" src="assets/imgs/menu.png">
         </ion-row>
+    </ion-grid>
 
+    <ion-grid class="grid-main">
         <ion-row padding>
             <ion-col col-12>
                 <button ion-button  block round large color="secondary" style="color:black" (click)="goToPlayTopicPage()">Play Game</button>
@@ -27,7 +29,6 @@
                 <button ion-button  block round large class="btn-profile" style="color:black" (click)="goToProfilePage()"> Profile </button>
             </ion-col>
         </ion-row>
-
     </ion-grid>
 
 </ion-content>

@@ -1,3 +1,4 @@
+
 page-ranking {
     @media only screen and (min-width: 1024px) {
         .custom-Avatar-grid {
@@ -155,5 +156,20 @@ page-ranking {
         color: rgb(0, 0, 0);
         margin-top: 1.3rem;
     }
-    
+    .img-1{
+        width: 30px;
+        height: 30px;
+        border: 0px !important;
+        border-bottom-color: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+        margin: auto;
+    }
+    .h6-main{
+        margin-right: 15px;
+    }
+    .col-rank{
+        // text-align: left;
+        align-items: center;
+    }
 }

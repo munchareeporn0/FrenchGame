@@ -6,8 +6,13 @@
 -->
 
 
-<ion-content padding>
-  <ion-row class="loading">
-    <ion-spinner color="circles" name="circles" *ngIf="loading" >Loading</ion-spinner>
+<ion-content padding class="bg">
+    <ion-row class="loading1">
+    </ion-row>
+  <ion-row class="loading2">
+    <img class="img-1" src="assets/imgs/loading1.gif">
   </ion-row>
+  <ion-row class="loading2">
+      <ion-spinner color="circles" spinner="bubbles" *ngIf="loading" ></ion-spinner>
+    </ion-row>
 </ion-content>

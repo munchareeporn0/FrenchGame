@@ -208,7 +208,7 @@ export class LoginPage {
         this.navCtrl.push(MenuPage);
       }
 
-    }, 2000);
+    }, 2100);
 
   }
 
