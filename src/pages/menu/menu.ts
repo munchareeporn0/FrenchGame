@@ -9,6 +9,7 @@ import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/toPromise';
 import  'rxjs/add/operator/catch';
+import { StudyTopicPage } from '../study-topic/study-topic';
 /**
  * Generated class for the MenuPage page.
  *
@@ -54,7 +55,7 @@ export class MenuPage {
     },(error)=>{
       console.log(error);
     });
-    this.navCtrl.push(StudyPage);
+    this.navCtrl.push(StudyTopicPage);
   }
 
   goToRulesPage(){

@@ -32,6 +32,7 @@ import { IntroPage } from '../pages/intro/intro';
 import { TypePage } from '../pages/type/type';
 import { MenuPageModule } from '../pages/menu/menu.module';
 import { RankingPage } from '../pages/ranking/ranking';
+import { StudyTopicPage } from '../pages/study-topic/study-topic';
 
 
 
@@ -52,6 +53,7 @@ import { RankingPage } from '../pages/ranking/ranking';
     IntroPage,
     TypePage,
     RankingPage,
+    StudyTopicPage
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,8 @@ import { RankingPage } from '../pages/ranking/ranking';
     LoginPage,
     IntroPage,
     TypePage,
-    RankingPage
+    RankingPage,
+    StudyTopicPage
   ],
   providers: [
     StatusBar,

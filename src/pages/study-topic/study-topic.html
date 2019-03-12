@@ -1,0 +1,32 @@
+<!--
+  Generated template for the StudyTopicPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+    <ion-navbar color="white">
+        <ion-row no-padding>
+            <ion-col no-padding col-10>
+            <h2 text-center class="text-nav">Select Topic</h2>
+            </ion-col>
+            <ion-col no-padding col-2>
+
+            </ion-col>
+         </ion-row>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+    <ion-grid>
+        <ion-row padding class="bg-w">
+            <ion-col col-12 class="col-topic" *ngFor="let topic of topics">
+                <button ion-button item-start default class="btnTopic" color="info">{{topic.id}}</button>
+            </ion-col>
+            <!-- *ngFor="let topic of topics" -->
+        </ion-row>
+    </ion-grid>
+</ion-content>
