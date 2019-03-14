@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Prompt', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Prompt');
+}
+page-demonstratifs {
+    h5,
+    h6{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: 'Prompt', sans-serif !important;
+    }
+    .bg {
+        background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
+    }
+    .bg-table{
+        background: white;
+    }
+    .table{
+        // height: 12%;
+        border:1pt solid rgb(168, 167, 167);
+        padding : 0px;
+        
+    }
+    .col-table{
+        border-left:1pt solid rgb(168, 167, 167);
+       
+    }
+    .detail-top{
+        padding-top: 12px;
+        padding-bottom: 3px;
+        padding-left: 7px;
+        padding-right: 3px;
+    }
+    .detail{
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 7px;
+        padding-right: 3px;
+    }
+    .detail-last{
+        padding-top: 3px;
+        padding-bottom: 12px;
+        padding-left: 7px;
+        padding-right: 3px;
+    }
+}

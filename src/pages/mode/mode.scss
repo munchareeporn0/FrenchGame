@@ -1,4 +1,19 @@
 page-mode {
+    @media only screen and (min-width: 1024px) {
+        .pad-row {
+            // margin-top: 90px;
+            margin-left: 120px;
+            margin-right: 120px; 
+        }  
+    }
+
+    @media only screen and (min-width: 765px) {
+        .pad-row {
+            // margin-top: 90px;
+            margin-left: 100px;
+            margin-right: 100px; 
+        }  
+    }
     .bg {
         background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
     }

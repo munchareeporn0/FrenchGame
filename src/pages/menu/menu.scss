@@ -1,5 +1,19 @@
 page-menu {
 
+    @media only screen and (min-width: 1024px) {
+        .row-main {
+            margin-left: 130px;
+            margin-right: 130px; 
+        }  
+    }
+
+    @media only screen and (min-width: 765px) {
+        .row-main {
+            margin-left: 100px;
+            margin-right: 100px; 
+        }  
+    }
+
     .grid-topic {
         margin-top: 40px;
     }

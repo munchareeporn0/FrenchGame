@@ -33,7 +33,7 @@
     "@types/node": "^10.12.24",
     "angular-oauth2-oidc": "^5.0.2",
     "angular-progress-bar": "^1.0.9",
-    "cordova-android": "^7.0.0",
+    "cordova-android": "7.1.4",
     "cordova-browser": "5.0.4",
     "cordova-plugin-advanced-http": "^2.0.2",
     "cordova-plugin-device": "^2.0.2",
@@ -82,8 +82,8 @@
       "cordova-plugin-inappbrowser": {}
     },
     "platforms": [
-      "android",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }

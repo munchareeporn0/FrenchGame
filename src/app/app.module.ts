@@ -1,4 +1,3 @@
-
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -33,6 +32,9 @@ import { TypePage } from '../pages/type/type';
 import { MenuPageModule } from '../pages/menu/menu.module';
 import { RankingPage } from '../pages/ranking/ranking';
 import { StudyTopicPage } from '../pages/study-topic/study-topic';
+import { DemonstratifsPage } from '../pages/demonstratifs/demonstratifs';
+import { InterrogatifPage } from './../pages/interrogatif/interrogatif';
+import { PossessivePage } from './../pages/possessive/possessive';
 
 
 
@@ -53,7 +55,10 @@ import { StudyTopicPage } from '../pages/study-topic/study-topic';
     IntroPage,
     TypePage,
     RankingPage,
-    StudyTopicPage
+    StudyTopicPage,
+    DemonstratifsPage,
+    InterrogatifPage,
+    PossessivePage
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,10 @@ import { StudyTopicPage } from '../pages/study-topic/study-topic';
     IntroPage,
     TypePage,
     RankingPage,
-    StudyTopicPage
+    StudyTopicPage,
+    DemonstratifsPage,
+    InterrogatifPage,
+    PossessivePage
   ],
   providers: [
     StatusBar,

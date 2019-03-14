@@ -1,6 +1,17 @@
-
-
 page-play {
+    @media only screen and (min-width: 1024px) {
+        .pad-row {
+            margin-left: 120px;
+            margin-right: 120px; 
+        }  
+    }
+
+    @media only screen and (min-width: 765px) {
+        .pad-row {
+            margin-left: 100px;
+            margin-right: 100px; 
+        }  
+    }
     .bg {
         background-color: #48508e;
     }
