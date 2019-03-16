@@ -73,26 +73,9 @@
 
               <ion-row class="table" *ngFor="let person of persons">
                 <ion-col col-4>
-                  <ion-col *ngIf="person.rank == 1">
-                      <img src="https://img.icons8.com/color/48/000000/medal2.png">
-                  </ion-col>
-                  <ion-col *ngIf="person.rank == 2">
-                      <img src="https://img.icons8.com/color/48/000000/medal-second-place.png">
-                  </ion-col>
-                  <ion-col *ngIf="person.rank == 3">
-                      <img src="https://img.icons8.com/color/48/000000/medal2-third-place.png">
-                  </ion-col>
-                  <ion-col *ngIf="person.rank > 3">
+                  <ion-col>
                       <h6 class="h6-main" style ="font-weight: bold;">{{person.rank}}</h6>
                   </ion-col>
-                  <!-- <ion-row no-padding>
-                    <ion-col col-2 no-padding *ngIf="person.rank == 1">
-                      <img class="img-1" src="https://img.icons8.com/color/48/000000/fairytale.png">
-                    </ion-col>
-                    <ion-col class="col-rank" no-padding >
-                      <h6 class="h6-main" style ="font-weight: bold;">{{person.rank}}</h6>
-                    </ion-col>
-                  </ion-row> -->
                 </ion-col>
 
                 <ion-col col-5>
