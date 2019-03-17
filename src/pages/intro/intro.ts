@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
-import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
-import {LoginPage} from '../login/login';
-import {MenuPage} from '../menu/menu';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
-import { timeout } from 'rxjs/operator/timeout';
-import { HTTP } from '@ionic-native/http';
-import { Response } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';

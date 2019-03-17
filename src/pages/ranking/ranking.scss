@@ -133,14 +133,14 @@ page-ranking {
         padding-left: 5px;
     }
     .table-head{
-        height: 6%;
+        min-height: 37px;
         border-top:1pt solid #ccc;
         border-bottom:1pt solid #ccc;
         align-items: center;
         text-align: center;
     }
     .table{
-        height: 12%;
+        min-height: 58px;
         border-bottom:1pt solid #ccc;
         align-items: center;
         text-align: center;

@@ -6,10 +6,8 @@ export const OAUTH_REDIRECT_URI = 'https://us-central1-frenchgame-228900.cloudfu
 
 export const OAUTH_URI = 'https://us-central1-frenchgame-228900.cloudfunctions.net';
 export const OAUTH_SCOPE = 'cmuitaccount.basicinfo'; 
-const CRYPTO_KEY = 'A5178B6A965AACF3CD60B07A15061719';
 export const SERVER = 'https://www.ljcmu.com';
 // export const SERVER = 'http://localhost:5100';
-import * as crypto from 'crypto-js';
 
 export function getOAuthAuthenUrl() {
   let backUrl = window.location.origin + '%2F%23%2Flogin'

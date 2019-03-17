@@ -1,7 +1,9 @@
 import { ModePage } from './../mode/mode';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform} from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { MenuPage } from '../menu/menu';
 import { Storage } from '@ionic/storage';
 
 
@@ -19,7 +21,7 @@ import { Storage } from '@ionic/storage';
 })
 export class PlayTopicPage {
   topics:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio,private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private Alert: AlertController, public platform: Platform,private nativeAudio: NativeAudio,private storage: Storage) {
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/ding.mp3').then((success)=>{
         console.log("success");
@@ -28,7 +30,23 @@ export class PlayTopicPage {
       });
     });
     this.storage.get('topic').then((val) => {
-      this.topics = (<any>Object).values(val);
+      if(val == null){
+        let alert = this.Alert.create({
+          title: 'Oops! Sorry :(',
+          message: 'An error occurred. Please refresh app or try again later',
+          buttons: [
+            {
+              text: 'OK',
+              handler: () => {
+                this.navCtrl.push(MenuPage);
+              }
+            }
+          ]
+        });
+        alert.present(alert);
+      }else{
+        this.topics = (<any>Object).values(val);
+      }
     });
     
     // this.topics.forEach(element => {

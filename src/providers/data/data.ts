@@ -1,5 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Http, Headers , RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 

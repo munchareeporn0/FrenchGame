@@ -1,12 +1,9 @@
-import { AvatarPage } from './../avatar/avatar';
-import { LoginPage } from './../login/login';
 import { MenuPage } from '../menu/menu';
 import { Component } from '@angular/core';
-import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
-import { IonicPage, NavController, NavParams, MenuController, Alert , Platform} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { count } from 'rxjs/operator/count';
 import { RankingPage } from '../ranking/ranking';
 import { ViewChild } from '@angular/core';
 import { NativeAudio } from '@ionic-native/native-audio';
@@ -70,6 +67,8 @@ export class PlayPage {
   count = 0;
   q_no = 0;
   size_choice = 0;
+  correct:boolean = false;
+  wrong:boolean = false;
 
   loading:boolean = false;  
   showAlertMessage: boolean = true;
@@ -164,9 +163,9 @@ export class PlayPage {
 
     if(this.dis_btn == 1){
       for(let i = 0; i < this.size_choice; i++){
-        if(i != _choice){
+        // if(i != _choice){
           this.disableButton[i] = true;
-        }  
+        // }  
       }
     }
 
@@ -177,7 +176,7 @@ export class PlayPage {
     //-----------------------------------------------------
 
     if(_choice == 0){  //Correct Answer
-      
+      this.correct = true;
       this.Color = []; 
       for(let i = 0; i < this.size_choice;i++){  //color
         if(i == 0){
@@ -198,7 +197,7 @@ export class PlayPage {
       console.log("correct");
 
     }else{            //Incorrect Answer
-
+      this.wrong = true;
       this.Color = [];
       for(let i = 0; i < this.size_choice; i++){
         if(i == _choice){

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams , Platform} from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { Storage } from '@ionic/storage';
 import { DemonstratifsPage } from '../demonstratifs/demonstratifs';
+import { AlertController } from 'ionic-angular';
+import { MenuPage } from '../menu/menu';
 import { InterrogatifPage } from '../interrogatif/interrogatif';
 import { PossessivePage } from '../possessive/possessive';
 
@@ -20,7 +22,7 @@ import { PossessivePage } from '../possessive/possessive';
 })
 export class StudyTopicPage {
   topics:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio,private storage: Storage) {
+  constructor(public navCtrl: NavController,private Alert: AlertController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio,private storage: Storage) {
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/ding.mp3').then((success)=>{
         console.log("success");
@@ -28,8 +30,25 @@ export class StudyTopicPage {
         console.log(error);
       });
     });
+
     this.storage.get('topic').then((val) => {
-      this.topics = (<any>Object).values(val);
+      if(val == null){
+        let alert = this.Alert.create({
+          title: 'Oops! Sorry :(',
+          message: 'An error occurred. Please refresh app or try again later',
+          buttons: [
+            {
+              text: 'OK',
+              handler: () => {
+                this.navCtrl.push(MenuPage);
+              }
+            }
+          ]
+        });
+        alert.present(alert);
+      }else{
+        this.topics = (<any>Object).values(val);
+      }
     });
   }
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HTTP } from '@ionic-native/http';
-import { HttpModule, Http, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import 'rxjs/add/operator/toPromise';
 import { MenuPage } from './../menu/menu';

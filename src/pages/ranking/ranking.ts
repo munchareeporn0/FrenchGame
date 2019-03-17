@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { Navbar } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { MenuPage } from '../menu/menu';
@@ -27,13 +27,17 @@ export class RankingPage {
   cmuacc:any;
   size:any;
   avatar:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ios:boolean = false;
+  android:boolean = false;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
     this.persons  = navParams.get('person'); 
     this.score    = navParams.get('score'); 
     this.rank     = navParams.get('rank');
     this.cmuacc   = navParams.get('cmuitaccount_name');
     this.size     = navParams.get('size_choice');
     this.avatar   = navParams.get('avatar');
+
   }
 
   ionViewDidLoad() {

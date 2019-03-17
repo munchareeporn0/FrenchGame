@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import {IonicPage, NavController} from 'ionic-angular';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {LoadingController} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
@@ -11,9 +10,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {MenuPage} from '../menu/menu';
-import {JwksValidationHandler, OAuthService} from 'angular-oauth2-oidc';
 import {InAppBrowser} from "@ionic-native/in-app-browser";
-import {getOAuthAuthenUrl, getOAuthAuthenUrlMobile, OAUTH_REDIRECT_URI, OAUTH_URI} from "../../app/app.config";
+import {getOAuthAuthenUrl, getOAuthAuthenUrlMobile, OAUTH_URI} from "../../app/app.config";
 import { AvatarPage } from '../avatar/avatar';
 
 /**

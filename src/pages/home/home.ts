@@ -1,10 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {LoginPage} from '../login/login';
-import {MenuPage} from '../menu/menu';
 
 import {Storage} from '@ionic/storage';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Component({
   selector: 'page-home',
@@ -16,8 +13,7 @@ export class HomePage {
 
   constructor(
     public storage: Storage,
-    public navCtrl: NavController,
-    private  http: HttpClient) {
+    public navCtrl: NavController) {
     this.storage.get('id').then((id) => {
       if (id != null) {
         this.cheackS = true;
