@@ -4,10 +4,10 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
 import { IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { RankingPage } from '../ranking/ranking';
 import { ViewChild } from '@angular/core';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { Navbar } from 'ionic-angular';
+import { AnswerPage } from '../answer/answer';
 
 
 
@@ -30,6 +30,8 @@ export class PlayPage {
 
   //--------------------------------send to UpdataScore and RankingPage
   person:PlayPage.RankScore[] = [];
+  verQuestion:PlayPage.VerAnswer[] = [];
+  
   _correct:any[] = [];
   _wrong:any[] = [];
   rank:any;
@@ -54,6 +56,7 @@ export class PlayPage {
 
   //--------------------------------Use in Page
   list_num:string[] = [];
+  list_answer:string[] = [];
   rand_choices:any;
   key:string;
   keep_score:any;
@@ -76,20 +79,9 @@ export class PlayPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private Alert: AlertController,public nav: NavController
     , private storage: Storage, public http: Http, private nativeAudio: NativeAudio, public platform: Platform) { 
     this.nav = nav;
-    this.platform.ready().then(() => {     //Load button sound Correct
-      this.nativeAudio.preloadSimple('btnSoundCorrect', 'src/assets/audio/correct.wav').then((success)=>{
-        console.log("Loading Sound Success 1");
-      },(error)=>{
-        console.log(error);
-      });
-    });
-
-    this.platform.ready().then(() => {    //Load button sound Incorrect
-      this.nativeAudio.preloadSimple('btnSoundInCorrect', 'src/assets/audio/incorrect.mp3').then((success)=>{
-        console.log("Loading Sound Success 2");
-      },(error)=>{
-        console.log(error);
-      });
+    this.platform.ready().then(() => {     //Load button sound 
+      this.nativeAudio.preloadSimple('btnSoundCorrect', 'src/assets/audio/correct.wav')
+      this.nativeAudio.preloadSimple('btnSoundInCorrect', 'src/assets/audio/incorrect.mp3')
     });
 
     this.Color = [];
@@ -106,7 +98,7 @@ export class PlayPage {
     this.key    = navParams.get('key');
     this.mode   = navParams.get('mode');
     this.No     = navParams.get('No');
-    
+
     this.storage.get('cmuitaccount_name').then((val) => {
       this.cmuitaccount_name = val;
     });
@@ -122,7 +114,6 @@ export class PlayPage {
 
     this.storage.get(this.key).then((val) => {
       this.keepQuestions = val;
-      
       (<any>Object).keys(this.keepQuestions).forEach(element => {
         this.list_num.push(element);
       });
@@ -134,38 +125,42 @@ export class PlayPage {
           this._correct = navParams.get('_correct'); 
           this._wrong   = navParams.get('_wrong'); 
           this._hint    = navParams.get('_hint'); 
-
+          this.list_answer = navParams.get('answer');
         }
 
         this.choices       = (<any>Object).values(this.keepQuestions[this.list_num[this.q_no]]['Choices']);
         this.size_choice   = (<any>Object).values(this.keepQuestions[this.list_num[this.q_no]]['Choices']).length;
         this.rand_choices  = Array(this.size_choice);
-      
+
+        
+        
         this.disableButton = new Array(this.size_choice);     //hint
 
         for(let i:number = 0; i < this.size_choice; i++){
           this.rand_choices[i]  = i;
           this.disableButton[i] = false;
         }
-        
+
+
         this.rand_choices = this.shuffle(this.rand_choices); 
         this.question     = this.keepQuestions[this.list_num[this.q_no]]['Question'];
         this.answer       = this.keepQuestions[this.list_num[this.q_no]]['Answer'];
-        
+       
     });
 
   }
 
   verifyAnswer(q_no,_choice) {
-
+    
     let _score = 0;
     this.dis_btn += 1;
+    // console.log('choose = ', _choice);
+    // console.log(this.choices[_choice]);
+    this.list_answer.push(this.choices[_choice]);
 
     if(this.dis_btn == 1){
       for(let i = 0; i < this.size_choice; i++){
-        // if(i != _choice){
           this.disableButton[i] = true;
-        // }  
       }
     }
 
@@ -177,7 +172,7 @@ export class PlayPage {
 
     if(_choice == 0){  //Correct Answer
       this.correct = true;
-      this.Color = []; 
+       this.Color = []; 
       for(let i = 0; i < this.size_choice;i++){  //color
         if(i == 0){
           this.Color.push('#00b300');
@@ -194,7 +189,7 @@ export class PlayPage {
 
       _score += this.curr_score;
       this._correct.push(q_no);
-      console.log("correct");
+      // console.log("correct");
 
     }else{            //Incorrect Answer
       this.wrong = true;
@@ -231,7 +226,8 @@ export class PlayPage {
             _wrong    :this._wrong,
             _hint     :this._hint,
             topic     :this.topic,
-            mode      :this.mode
+            mode      :this.mode,
+            answer    :this.list_answer
           });
         }, 800); 
     }else{
@@ -242,6 +238,7 @@ export class PlayPage {
   }
 
   updateScore(){
+
 
     this.mode = this.mode.toString();
 
@@ -285,16 +282,44 @@ export class PlayPage {
             }
             this.person[i].rank = i + 1;
           }
+
+          let size = this._correct.length + this._wrong.length;
+          let check_answer:any[] = new Array(size);
+
+          this._correct.forEach(element => {
+            check_answer[element] = 1
+          });
+          this._wrong.forEach(element => {
+            check_answer[element] = 0
+          });
+          
+          let temp = 0;
+
+          this.list_num.forEach(element => {
+            let newVarQuestion : PlayPage.VerAnswer = {
+              num : temp + 1,
+              question : this.keepQuestions[element]['Question'],
+              answer : this.keepQuestions[element]['Answer'],
+              correctChoice:this.keepQuestions[element]['Choices'][0],
+              pickChoice:this.list_answer[temp],
+              check:check_answer[temp]
+            }
+            this.verQuestion.push(newVarQuestion);
+            temp += 1;
+          });
+
           this.loading = false;
 
-          this.navCtrl.push(RankingPage,{
+          this.navCtrl.push(AnswerPage,{
             score             :this.score,
             rank              :this.rank,
             person            :this.person,
-            cmuitaccount_name :this.cmuitaccount_name,
             size_choice       :this.No,
-            avatar            :this.avatar
-          });    
+            avatar            :this.avatar,
+            verQuestion       :this.verQuestion
+          });   
+         
+
       }
       ,err =>{
 
@@ -378,34 +403,6 @@ export class PlayPage {
       this.navCtrl.push(MenuPage);
     }
   }
-
-  // ionViewCanLeave(): Promise<any> {
-  //   return new Promise((resolve, reject) => {
-  //     let alert = this.alertCtrl.create({
-  //       title: 'Alert',
-  //       message: 'Please confirm ...',
-  //       buttons: [
-  //         {
-  //           text: 'Cancel',
-  //           role: 'cancel',
-  //           handler: () => {
-  //             reject();
-  //           },
-  //         },
-  //         {
-  //           text: 'Confirm',
-  //           handler: () => {
-  //             resolve(
-  //                   this.navBar.backButtonClick = () => {
-  //                   this.navCtrl.push(MenuPage); }
-  //             );
-  //           },
-  //         },
-  //       ],
-  //     });
-  //     alert.present();
-  //   });
-  // }
   
 
 }
@@ -416,5 +413,16 @@ export module PlayPage {
     avatar:any;
     score:any;
     rank:any;
+  }
+}
+
+export module PlayPage {
+  export class VerAnswer {
+    num:any;
+    question:any;
+    answer:any;
+    correctChoice:any;
+    pickChoice:any;
+    check:any;
   }
 }

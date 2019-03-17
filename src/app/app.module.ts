@@ -1,3 +1,4 @@
+import { AnswerPage } from './../pages/answer/answer';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -58,7 +59,8 @@ import { PossessivePage } from './../pages/possessive/possessive';
     StudyTopicPage,
     DemonstratifsPage,
     InterrogatifPage,
-    PossessivePage
+    PossessivePage,
+    AnswerPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,7 @@ import { PossessivePage } from './../pages/possessive/possessive';
     LoginPageModule,
     IonicStorageModule.forRoot({
       name: '__mydb',
-    driverOrder: ['indexeddb', 'sqlite', 'websql']
+      driverOrder: ['sqlite', 'websql','indexeddb']
     })
   ],
   bootstrap: [IonicApp],
@@ -95,7 +97,8 @@ import { PossessivePage } from './../pages/possessive/possessive';
     StudyTopicPage,
     DemonstratifsPage,
     InterrogatifPage,
-    PossessivePage
+    PossessivePage,
+    AnswerPage
   ],
   providers: [
     StatusBar,

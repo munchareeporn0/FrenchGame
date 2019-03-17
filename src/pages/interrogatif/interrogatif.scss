@@ -16,10 +16,15 @@ page-interrogatif {
         background: white;
     }
     .table{
-        // height: 12%;
-        border:1pt solid rgb(168, 167, 167);
+        border:1pt solid rgb(126, 126, 126);
         padding : 0px;
         
+    }
+    .table-main{
+        border-bottom:1pt solid rgb(126, 126, 126);
+        border-left:1pt solid rgb(126, 126, 126);
+        border-right:1pt solid rgb(126, 126, 126);
+        padding : 0px;
     }
     .col-table{
         border-left:1pt solid rgb(168, 167, 167);
@@ -54,22 +59,22 @@ page-interrogatif {
         padding-right: 3px;
     }
     .col-head1{
-        background-color: #FFFD56;
+        background-color: rgb(247, 255, 142);
         align-items: center;
         text-align: center;
     }
     .col-head2{
-        background-color: #73DF4B;
+        background-color: rgb(202, 255, 164);
         align-items: center;
         text-align: center;
     }
     .col-head3{
-        background-color: #61C3C3;
+        background-color: rgb(182, 194, 255);
         align-items: center;
         text-align: center;
     }
     .col-head4{
-        background-color: #E070B2;
+        background-color: rgb(255, 211, 211);
         align-items: center;
         text-align: center;
     }
