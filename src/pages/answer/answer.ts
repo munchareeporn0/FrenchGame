@@ -41,7 +41,7 @@ export class AnswerPage {
       this.cmuitaccount_name = val;
     });
     
-    console.log(this.verQuestions);
+    // console.log(this.verQuestions);
     
   }
 

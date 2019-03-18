@@ -3,10 +3,12 @@ import { RulesPage } from './../rules/rules';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { PlayTopicPage } from '../play-topic/play-topic';
+import { Storage } from '@ionic/storage';
 import { NativeAudio } from '@ionic-native/native-audio';
 import 'rxjs/add/operator/toPromise';
 import  'rxjs/add/operator/catch';
 import { StudyTopicPage } from '../study-topic/study-topic';
+import { IntroPage } from '../intro/intro';
 /**
  * Generated class for the MenuPage page.
  *
@@ -23,7 +25,7 @@ import { StudyTopicPage } from '../study-topic/study-topic';
 
 export class MenuPage {
   data:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio) {
+  constructor(public navCtrl: NavController, private storage: Storage, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio) {
     this.platform.ready().then(() => {
       this.nativeAudio.preloadSimple('btnSoundId1', 'src/assets/audio/ding.mp3').then((success)=>{
         console.log("success");
