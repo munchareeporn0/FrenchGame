@@ -169,6 +169,7 @@ export class LoginPage {
 
     this.http.get(OAUTH_URI + '/getUser?access_token=' + access_token)
       .subscribe(data => {
+        // console.log(data);
           this.doAfterLogin(data)
       },err =>{
         let alert = this.Alert.create({
@@ -211,12 +212,36 @@ export class LoginPage {
   }
 
   setData() {
+    var keep:any[] = []; 
     var name:string;
+    var size:any;
+    var key_correct:any;
+    var topic:any[];
+    this.storage.get('topic').then((val) => {
+      keep = (<any>Object).keys(val);
+      size = keep.length;
+      topic = new Array(size);  
+
+      for(let i = 0; i < size; i++){
+        topic[i] = keep[i];    
+      }
+
+      for(let i = 0; i < size; i++){
+        for(let j = 0; j < 3; j++){
+          key_correct = `${topic[i]}_lv${j+1}_correct`;
+          let temp:string = `lv${j+1}_correct`;
+          this.storage.set(key_correct,this.data[topic[i]][temp]); 
+        }
+        
+      }
+    });
+
     name = this.data['firstname_EN'].concat(' ', this.data['lastname_EN']);
     this.storage.set('name',name);
     this.storage.set('cmuitaccount_name',this.data['cmuitaccount_name']);
     this.storage.set('cmuitaccount',this.data['cmuitaccount']);
     this.storage.set('avatar', this.data['avatar']);
+    
 
   };
 

@@ -1,14 +1,14 @@
 
 @font-face {
-    font-family: 'Prompt', sans-serif;
-    @import url('https://fonts.googleapis.com/css?family=Prompt');
+    font-family: 'Kanit', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Kanit');
 }
 page-rules {
     h3,
     h4,
     h5,
-    h6,{
-        font-family: 'Prompt', sans-serif !important;
+    h6{
+        font-family: 'Kanit', sans-serif !important;
     }
     .text-nav{
         font-weight: normal;
@@ -51,7 +51,5 @@ page-rules {
     .gird-topic{
         margin-bottom: 5px;
     }
-    .rule-content{
-        // background-color: rgb(255, 230, 230);
-    }
+    
 }

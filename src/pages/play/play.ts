@@ -66,6 +66,8 @@ export class PlayPage {
   choices:any;
   others_score:any;
   status:any;
+  correct_update:any;
+  
   dis_btn = 0;
   count = 0;
   q_no = 0;
@@ -239,6 +241,25 @@ export class PlayPage {
 
   updateScore(){
 
+    let key_update:any;
+    let keep:any [] = []
+    let set:any;
+    key_update = `${this.topic}_lv${this.mode}_correct`;
+
+    this.storage.get(key_update).then((val) => {
+      
+        Object.keys(val).forEach(function(key) {
+          keep.push(val[key]);
+        });
+      this.correct_update = this._correct.concat(keep);
+
+      set = new Set(this.correct_update);
+      this.correct_update = Array.from(set.values());
+      this.correct_update = this.bubbleSort_topic(this.correct_update);
+
+      this.storage.set(key_update,this.correct_update);
+
+    });
 
     this.mode = this.mode.toString();
 
@@ -262,17 +283,20 @@ export class PlayPage {
     this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/updateScore", postParams, requestOptions).map(res => res.json()).  
       subscribe(data => {
           let score = `lv${this.mode}_score`;
-          this.others_score = data;
+            this.others_score = data;
+            (<any>Object).keys(this.others_score[this.topic]).forEach(element => {
 
-          (<any>Object).keys(this.others_score[this.topic]).forEach(element => {
-            let newPerson : PlayPage.RankScore = {
-                name   : element,
-                avatar : `assets/imgs/${this.others_score[this.topic][element]["avatar"]}.png`,
-                score  : this.others_score[this.topic][element][score],
-                rank   : 0
-            }
-            this.person.push(newPerson);
-          }); 
+              if(this.others_score[this.topic][element][score] > 0){
+                let newPerson : PlayPage.RankScore = {
+                    name   : element,
+                    avatar : `assets/imgs/${this.others_score[this.topic][element]["avatar"]}.png`,
+                    score  : this.others_score[this.topic][element][score],
+                    rank   : 0
+                }
+                this.person.push(newPerson);
+              }
+              
+            }); 
 
           this.person = this.bubbleSort(this.person);
           
@@ -393,6 +417,22 @@ export class PlayPage {
     }
     return array;
   }
+
+  bubbleSort_topic (array: number[]): number[] {
+    array = array.slice(); // creates a copy of the array
+
+    for(let i = 0; i < array.length; i++) {
+        for(let j = 0; j < array.length - 1; j++) {
+
+            if(array[j] > array[j + 1]) {
+                let swap = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = swap;
+            }
+        }
+    }
+    return array;
+}
   
   ionViewDidLoad() {
     this.setBackButtonAction()

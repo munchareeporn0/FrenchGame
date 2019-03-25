@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StudyModePage } from '../study-mode/study-mode';
 
 /**
  * Generated class for the DemonstratifsPage page.
@@ -14,12 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'demonstratifs.html',
 })
 export class DemonstratifsPage {
-
+  topic:any;
+  label:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    this.topic = navParams.get('topic');   
+    this.label = navParams.get('label');    
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DemonstratifsPage');
   }
-
+  goToModePage(){
+    this.navCtrl.push(StudyModePage,{
+      topic : this.topic,
+      label : this.label
+    });
+  }
 }

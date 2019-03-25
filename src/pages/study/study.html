@@ -8,20 +8,66 @@
 
     <ion-navbar color="white">
         <ion-row no-padding>
-            <ion-col no-padding col-10 col-11-md col-11-lg>
+            <ion-col no-padding col-10>
             <h2 text-center class="text-nav">Study</h2>
             </ion-col>
-            <ion-col no-padding col-2 col-1-md col-1-lg>
-
+            <ion-col no-padding col-2>
+  
             </ion-col>
          </ion-row>
     </ion-navbar>
-
-</ion-header>
+  
+  </ion-header>
 
 
 <ion-content padding>
-    <ion-grid class="grid-main">
-      <img class="img-2" src="assets/imgs/study.png">     
+    <ion-grid>
+          <ion-row>
+            <ion-col col-12 class="col-head">
+              <h4 class="text-head">{{label}}</h4>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8> 
+              <h5 class="text-head">Mode : {{mode_label}}</h5>
+            </ion-col>
+            <ion-col col-4 class="col-btn"> 
+                <h5 class="text-head">{{size}} ข้อ</h5>
+            </ion-col>
+          </ion-row>
+        <hr class="hr-head">
     </ion-grid>
+
+    <ion-grid *ngFor="let verQ of varQues">
+        <ion-grid padding class="grid-head">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <h4 class="num-head"> <b>{{verQ.num}}</b> </h4>
+              </ion-col>
+            </ion-row>
+            <hr class="hr-main">
+          </ion-grid>
+    
+          <ion-grid padding>
+            <ion-row>
+                <h6> {{verQ.question}} </h6>
+            </ion-row>
+            <ion-row>
+                <h6>{{verQ.answer}} </h6>
+            </ion-row>
+            <ion-row *ngIf="verQ.check == 1">
+                <h6 style="color: rgb(23, 163, 18)"><b>Answer :</b> {{verQ.correctChoice}} </h6>
+            </ion-row>
+            <ion-row *ngIf="verQ.check == 1">
+                <h6><b>คำอธิบาย :</b> {{verQ.description}} </h6>
+            </ion-row>
+            <ion-row *ngIf="verQ.check == 0">
+                <h6 style="color: rgb(121, 124, 121)"><b>&nbsp;-</b></h6>
+            </ion-row>
+          </ion-grid>
+    
+        </ion-grid>
+      </ion-grid>  
+
 </ion-content>

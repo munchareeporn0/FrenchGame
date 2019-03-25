@@ -1,3 +1,4 @@
+import { PossessivePage } from './../possessive/possessive';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform} from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
@@ -6,7 +7,7 @@ import { DemonstratifsPage } from '../demonstratifs/demonstratifs';
 import { AlertController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
 import { InterrogatifPage } from '../interrogatif/interrogatif';
-import { PossessivePage } from '../possessive/possessive';
+import { Demonstratifs1Page } from '../demonstratifs1/demonstratifs1';
 
 /**
  * Generated class for the StudyTopicPage page.
@@ -52,20 +53,33 @@ export class StudyTopicPage {
     });
   }
 
-  goToPage(topic:any){
+  goToPage(_topic:any,_label:any){
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");
     },(error)=>{
       console.log(error);
     });
-    if(topic == 'demonstratifs'){
-      this.navCtrl.push(DemonstratifsPage);
-    }else if(topic == 'interrogatifs'){
-      this.navCtrl.push(InterrogatifPage);
-    }else if(topic == 'possessive'){
-      this.navCtrl.push(PossessivePage);
+    if(_topic == 'demonstratifs1'){
+      this.navCtrl.push(DemonstratifsPage,{
+        topic : _topic,
+        label : _label
+      }); 
+    }else if(_topic == 'interrogatifs'){
+      this.navCtrl.push(InterrogatifPage,{
+        topic : _topic,
+        label : _label
+      });
+    }else if(_topic == 'possessive'){
+      this.navCtrl.push(PossessivePage,{
+        topic : _topic,
+        label : _label
+      });
+    }else if(_topic == 'demonstratifs2'){
+      this.navCtrl.push(Demonstratifs1Page,{
+        topic : _topic,
+        label : _label
+      });
     }
-    console.log(topic);
     
   }
 

@@ -1,4 +1,17 @@
 page-study-topic {
+    @media only screen and (min-width: 1024px) {
+        .btnTopic{
+            width: 60% !important;
+        } 
+    }
+    @media only screen and (min-width: 765px) {
+        .btnTopic{
+            width: 60% !important;
+        } 
+    }
+    button{
+        text-transform: none !important;
+    }
     .bg {
         background: linear-gradient(to bottom, #48508E 0%, #CE5959 100%)
     }
@@ -7,7 +20,7 @@ page-study-topic {
         border-radius: 20px;
     }
     .btnTopic{
-        width: 165px;
+        width: 100%;
     }
     .text-nav{
         font-weight: normal;

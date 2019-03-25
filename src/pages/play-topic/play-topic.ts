@@ -29,6 +29,7 @@ export class PlayTopicPage {
         console.log(error);
       });
     });
+    
     this.storage.get('topic').then((val) => {
       if(val == null){
         let alert = this.Alert.create({
@@ -62,7 +63,6 @@ export class PlayTopicPage {
 
   goToModePage(topic:string){
 
-    console.log(topic);
 
     this.nativeAudio.play('btnSoundId1').then((success)=>{
       console.log("success playing");

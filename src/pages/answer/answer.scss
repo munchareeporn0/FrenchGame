@@ -4,7 +4,7 @@ page-answer {
  }
  .text-head{
     margin: auto;
-    padding-top: 12px;
+    padding-top: 20px;
     // font-size: 1.7rem;
  }
  .grid-topic{
@@ -29,8 +29,18 @@ page-answer {
     float: right;
     text-align: right;
  }
+ .col-btn-last{
+   // float: right;
+   text-align: center;
+}
  .row-main{
      padding-top: 4px;
+ }
+ .grid-btn{
+    padding-left: 5px;
+    padding-bottom: 3px;
+    padding-right: 9px;
+    padding-top: 0px;
  }
  .hr-main{
     height: 1px !important;

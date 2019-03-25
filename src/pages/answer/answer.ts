@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { MenuPage } from '../menu/menu';
 import { RankingPage } from '../ranking/ranking';
+
 
 
 /**
@@ -17,7 +18,7 @@ import { RankingPage } from '../ranking/ranking';
   selector: 'page-answer',
   templateUrl: 'answer.html',
 })
-export class AnswerPage {
+export class AnswerPage{
 
   persons:any;
   score:any;
@@ -27,6 +28,7 @@ export class AnswerPage {
   verQuestions:any;
   check:any;
   cmuitaccount_name:any;
+  star:any;
   q_no = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
@@ -40,9 +42,30 @@ export class AnswerPage {
     this.storage.get('cmuitaccount_name').then((val) => {
       this.cmuitaccount_name = val;
     });
+
+    // console.log(this.size*0.2)
+
+    // console.log(this.size*0.4)
     
-    // console.log(this.verQuestions);
+    // console.log(this.size*0.7)
+
+    // console.log(Math.round(this.size*0.2))
+
+    // console.log(Math.round(this.size*0.4))
     
+    // console.log(Math.round(this.size*0.7))
+
+
+    if(this.score < Math.round(Math.round(this.size*0.2))){
+      this.star = 0;
+    }else if(this.score < Math.round(this.size*0.4)){
+      this.star = 1;
+    }else if(this.score < Math.round(this.size*0.7)){
+      this.star = 2;
+    }else if(this.score >= Math.round(this.size*0.7)){
+      this.star = 3;
+    }
+
   }
 
   goToRankingPage(){
@@ -59,6 +82,7 @@ export class AnswerPage {
   goToMenuPage(){
     this.navCtrl.push(MenuPage);
   }
+
 
 
 }

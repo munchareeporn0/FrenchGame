@@ -36,6 +36,8 @@ import { StudyTopicPage } from '../pages/study-topic/study-topic';
 import { DemonstratifsPage } from '../pages/demonstratifs/demonstratifs';
 import { InterrogatifPage } from './../pages/interrogatif/interrogatif';
 import { PossessivePage } from './../pages/possessive/possessive';
+import { Demonstratifs1Page } from '../pages/demonstratifs1/demonstratifs1';
+import { StudyModePage } from '../pages/study-mode/study-mode';
 
 
 
@@ -60,7 +62,9 @@ import { PossessivePage } from './../pages/possessive/possessive';
     DemonstratifsPage,
     InterrogatifPage,
     PossessivePage,
-    AnswerPage
+    AnswerPage,
+    Demonstratifs1Page,
+    StudyModePage
   ],
   imports: [
     BrowserModule,
@@ -98,7 +102,9 @@ import { PossessivePage } from './../pages/possessive/possessive';
     DemonstratifsPage,
     InterrogatifPage,
     PossessivePage,
-    AnswerPage
+    AnswerPage,
+    Demonstratifs1Page,
+    StudyModePage
   ],
   providers: [
     StatusBar,

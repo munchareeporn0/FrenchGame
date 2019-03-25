@@ -22,14 +22,24 @@
   <ion-grid>
       <ion-row>
         <ion-col col-5 class="col-head">
-          <h4 class="text-head"> Score : {{score}} </h4>
+          <h3 class="text-head"> Score : {{score}} </h3>
         </ion-col>
         <ion-col col-7 class="col-btn"> 
-            <button ion-button style="width: 79px; height: 30px;" color="info" (click)="goToMenuPage()">Menu</button>
-            <button ion-button style="width: 79px; height: 30px;" color="info" (click)="goToRankingPage()">Ranking</button>
+          <ion-img *ngIf="star == 0" width="145" height="45" src='../assets/imgs/0star.png'></ion-img>
+          <ion-img *ngIf="star == 1" width="145" height="45" src='../assets/imgs/1star.png'></ion-img>
+          <ion-img *ngIf="star == 2" width="145" height="45" src='../assets/imgs/2star.png'></ion-img>
+          <ion-img *ngIf="star == 3" width="145" height="45" src='../assets/imgs/3star.png'></ion-img>
         </ion-col>
       </ion-row>
       <hr class="hr-head">
+  </ion-grid>
+  <ion-grid class="grid-btn">
+      <ion-row no-padding>
+        <ion-col no-padding col-12 class="col-btn"> 
+            <button ion-button style="width: 40px; height: 30px;" color="info" (click)="goToRankingPage()"> <ion-icon large style="margin-bottom: 2px" ios="md-analytics" md="md-analytics" name="analytics"></ion-icon></button>
+            <button ion-button style="width: 40px; height: 30px;" color="info" (click)="goToMenuPage()"> <ion-icon large style="margin-bottom: 2px" ios="md-menu" md="md-menu" name="menu"></ion-icon></button>
+        </ion-col>
+      </ion-row>
   </ion-grid>
 
   <ion-grid *ngFor="let verQ of verQuestions">
@@ -63,6 +73,14 @@
       </ion-grid>
 
     </ion-grid>
+  </ion-grid>  
+  <ion-grid>
+      <!-- <hr class="hr-head"> -->
+      <ion-row>
+        <ion-col col-12 class="col-btn-last"> 
+            <button ion-button style="width: 89px; height: 38px; margin-right: 7px;" color="info" (click)="goToMenuPage()">Menu</button>
+            <button ion-button style="width: 89px; height: 38px; margin-left: 7px;" color="info" (click)="goToRankingPage()">Ranking</button>
+        </ion-col>
+      </ion-row>
   </ion-grid>
-
 </ion-content>

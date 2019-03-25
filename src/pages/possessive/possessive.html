@@ -20,7 +20,16 @@
 </ion-header>
 
 
-<ion-content no-padding class="top">
+<ion-content no-padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12 class="col-btn"> 
+              <button ion-button style="width: 83px; height: 31px;" color="info" (click)="goToModePage()"> <ion-icon large style="margin-bottom: 2px" name="book"></ion-icon> &nbsp;Study</button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
   <ion-grid padding class="text-topic">
       <h5><u>Pronoms possessifs</u></h5>
   </ion-grid>
@@ -39,7 +48,7 @@
               <!-- <p class="detail">Singulier</p> -->
             </ion-col>
             <ion-col col-2.5 class="col1-main">
-              <p class="detail-top">MASCULIN Pluriel</p>
+              <p class="detail-top">MASCULIN Pluriel</p>px
             </ion-col>
             <ion-col col-2.5 class="col1-main">
               <p class="detail-top">FEMININ Singulier</p>

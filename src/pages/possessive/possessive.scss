@@ -14,9 +14,6 @@ page-possessive {
     p{
         font-size: 1.3rem;
     }
-    .top{
-        margin-top: 30px;
-    }
     .bg {
         background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
     }
@@ -96,5 +93,15 @@ page-possessive {
     .text-topic{
         text-align: center;
     }
+    .col-btn{
+        float: right;
+        text-align: right;
+     }
+    .hr-head {
+        height: 1px !important;
+        width: 100% !important;
+        background: gray !important;
+        display: block !important;
+      }
     
 }
