@@ -27,6 +27,7 @@ export class IntroPage {
   cheackS = false;
   cheackQ = false;
   loading:boolean = false;
+  cmuacc:any;
   public static MAX_LEVEL = 3;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage
@@ -101,7 +102,17 @@ export class IntroPage {
   openlogin() {
     if (!this.cheackQ) {
       this.storage.get('cmuitaccount_name').then((id) => {
-        this.navCtrl.push(id == null?'LoginPage':'MenuPage');
+        this.cmuacc = id;
+        
+        this.storage.get('correct_status').then((val) => {
+          if(this.cmuacc != null && val != null){
+            this.navCtrl.push('MenuPage')
+          }else{
+            this.navCtrl.push('LoginPage')
+          }
+          
+          //  this.navCtrl.push(id == null?'LoginPage':'MenuPage');
+        });
       });
     } else {
       this.navCtrl.setRoot('MenuPage');

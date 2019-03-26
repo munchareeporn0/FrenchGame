@@ -34,6 +34,7 @@ export class StudyModePage {
   key:any;
   key_topic:any;
   label:any;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform,private nativeAudio: NativeAudio, public http: Http,private storage: Storage) {
     this.disableButton = [false,false,false];
     this.platform.ready().then(() => {

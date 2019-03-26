@@ -231,9 +231,9 @@ export class LoginPage {
           key_correct = `${topic[i]}_lv${j+1}_correct`;
           let temp:string = `lv${j+1}_correct`;
           this.storage.set(key_correct,this.data[topic[i]][temp]); 
-        }
-        
+        }   
       }
+      this.storage.set('correct_status',1);
     });
 
     name = this.data['firstname_EN'].concat(' ', this.data['lastname_EN']);
