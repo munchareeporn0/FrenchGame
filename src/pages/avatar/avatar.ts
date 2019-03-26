@@ -79,8 +79,4 @@ export class AvatarPage {
       }, 900);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AvatarPage');
-  }
-
 }

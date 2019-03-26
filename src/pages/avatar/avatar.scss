@@ -1,4 +1,36 @@
 page-avatar {
+    @media only screen and (max-width: 360px) {
+        .button1 {
+            background-size: 100%;
+            height: 60px !important;
+            width: 60px !important;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+        }
+    }
+    @media only screen and (max-width: 320px) {
+        .button1 {
+            background-size: 100%;
+            height: 47px !important;
+            width: 47px !important;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+        }
+    }
     .bg {
         background: linear-gradient(to bottom, #48508e 0%, #d65555 100%)
     }
