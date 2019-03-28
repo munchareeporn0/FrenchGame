@@ -177,9 +177,9 @@ export class PlayPage {
        this.Color = []; 
       for(let i = 0; i < this.size_choice;i++){  //color
         if(i == 0){
-          this.Color.push('#00b300');
+          this.Color[i] = '#00b300';
         }else{
-          this.Color.push('#48508e');
+          this.Color[i] = 'rgba(#48508e,0.4)';
         }        
       }
 
@@ -198,9 +198,9 @@ export class PlayPage {
       this.Color = [];
       for(let i = 0; i < this.size_choice; i++){
         if(i == _choice){
-          this.Color.push('#ff3333');
+          this.Color[i] = '#ff3333';
         }else{
-          this.Color.push('#48508e');
+          this.Color[i] = 'rgba(#48508e, 0.4)';
         } 
       }
       
