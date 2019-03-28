@@ -375,6 +375,7 @@ export class PlayPage {
         var rand = Math.floor(Math.random() * this.size_choice);
         if (this.disableButton[rand] == false && rand != 0) {
           this.disableButton[rand] = true;
+          this.Color[rand] = 'rgba(72, 80, 142, 0.4)';
           break;
         }
       }
