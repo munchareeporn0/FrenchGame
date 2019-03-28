@@ -1,72 +1,82 @@
 page-play {
-    @media only screen and (min-width: 1024px) {
-        .pad-row {
-            margin-left: 120px;
-            margin-right: 120px; 
-        }  
-    }
-
-    @media only screen and (min-width: 765px) {
-        .pad-row {
-            margin-left: 100px;
-            margin-right: 100px; 
-        }  
-    }
-    button{
-        text-transform: none !important;
-    }
-    .bg {
-        background-color: #48508e;
-    }
-    .right {
-        padding-top: 8px;
-    }
-    .col-num{
-        text-align: center;
-    }
+  @media only screen and (min-width: 1024px) {
     .pad-row {
-        padding: 0px 40px 26px 40px;
+      margin-left: 120px;
+      margin-right: 120px;
     }
-    ion-icon {
-        font-size: 40px;
-    }
-    .bottomNav {
-        width: 100%;
-        height: 0px;
-        background: white;
-        overflow: hidden;
-        transition: height 0.5s 0.2s;
-    }
+  }
 
-    .text-nav{
-        font-weight: normal;
-        color: rgb(255, 255, 255);
-        margin-top: 1.3rem;
+  @media only screen and (min-width: 765px) {
+    .pad-row {
+      margin-left: 100px;
+      margin-right: 100px;
     }
+  }
 
-    .loading {
-        margin-top:auto;
-        margin-bottom: auto; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  button,
+  button:disabled,
+  button[disabled] {
+    text-transform: none !important;
+    opacity: 1 !important;
+  }
 
-    #notification-button {            
-        position: relative;
-        width: 55px;
-        height: 46px;
-        top:1px;
-        right: 1px;
-        overflow: visible!important;
-    }
+  .bg {
+    background-color: #48508e;
+  }
+
+  .right {
+    padding-top: 8px;
+  }
+
+  .col-num {
+    text-align: center;
+  }
+
+  .pad-row {
+    padding: 0px 40px 26px 40px;
+  }
+
+  ion-icon {
+    font-size: 40px;
+  }
+
+  .bottomNav {
+    width: 100%;
+    height: 0px;
+    background: white;
+    overflow: hidden;
+    transition: height 0.5s 0.2s;
+  }
+
+  .text-nav {
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    margin-top: 1.3rem;
+  }
+
+  .loading {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #notification-button {
+    position: relative;
+    width: 55px;
+    height: 46px;
+    top: 1px;
+    right: 1px;
+    overflow: visible !important;
+  }
 
 
-    #notifications-badge {
-        background-color: #00b33c;
-        position: absolute;
-        top: 0.1px;
-        right: -0.4px;
-        border-radius: 100%;
-    }
+  #notifications-badge {
+    background-color: #00b33c;
+    position: absolute;
+    top: 0.1px;
+    right: -0.4px;
+    border-radius: 100%;
+  }
 }
