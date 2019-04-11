@@ -1,4 +1,14 @@
+@font-face {
+   font-family: 'Kanit', sans-serif;
+   @import url('https://fonts.googleapis.com/css?family=Kanit');
+}
 page-answer {
+   h3,
+    h4,
+    h5,
+    h6{
+        font-family: 'Kanit', sans-serif !important;
+    }
  .col-head{
     vertical-align: middle;
  }

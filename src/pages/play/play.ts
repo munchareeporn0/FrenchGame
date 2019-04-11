@@ -324,6 +324,7 @@ export class PlayPage {
               num : temp + 1,
               question : this.keepQuestions[element]['Question'],
               answer : this.keepQuestions[element]['Answer'],
+              description: this.keepQuestions[element]['Description'],
               correctChoice:this.keepQuestions[element]['Choices'][0],
               pickChoice:this.list_answer[temp],
               check:check_answer[temp]
@@ -462,6 +463,7 @@ export module PlayPage {
     num:any;
     question:any;
     answer:any;
+    description:any;
     correctChoice:any;
     pickChoice:any;
     check:any;
