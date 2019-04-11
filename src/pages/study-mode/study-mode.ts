@@ -51,7 +51,11 @@ export class StudyModePage {
     for(let i = 0; i < 3; i++){
       this.key = `${this.topic}_${i + 1}`;
       this.storage.get(this.key).then((val) => {
-        this.check_Q = (<any>Object).keys(val);
+        if(val == null || val == 'undefined'){
+          this.check_Q = [];
+        }else{
+          this.check_Q = (<any>Object).keys(val);
+        }
         if(this.check_Q[0] == null){
           this.disableButton[i] = true;
         }

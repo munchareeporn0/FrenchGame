@@ -12,6 +12,9 @@ page-demonstratifs {
     .bg {
         background: white;
     }
+    .grid-2{
+        padding-top: 15px;
+    }
     .bg-table{
         background: white;
     }
@@ -55,6 +58,12 @@ page-demonstratifs {
         padding-bottom: 3px;
         padding-left: 7px;
         padding-right: 3px;
+    }
+    .hr-head {
+        height: 1px !important;
+        width: 100% !important;
+        background: gray !important;
+        display: block !important;
     }
     .detail{
         padding-top: 3px;

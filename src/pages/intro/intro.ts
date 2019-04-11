@@ -105,7 +105,7 @@ export class IntroPage {
         this.cmuacc = id;
         
         this.storage.get('correct_status').then((val) => {
-          if(this.cmuacc != null && val != null){
+          if(this.cmuacc != null && val == 2){
             this.navCtrl.push('MenuPage')
           }else{
             this.navCtrl.push('LoginPage')

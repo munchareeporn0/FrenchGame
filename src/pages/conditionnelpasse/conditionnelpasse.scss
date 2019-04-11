@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Prompt', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Prompt');
+}
+page-conditionnelpasse {
+    h5,
+    h6{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: 'Prompt', sans-serif !important;
+    }
+    .col-btn{
+        float: right;
+        text-align: right;
+     }
+    .hr-head {
+        height: 1px !important;
+        width: 100% !important;
+        background: gray !important;
+        display: block !important;
+    }
+    .text-topic{
+        text-align: center;
+    }
+    .main1{
+       padding-left: 34px;
+    }
+    .topic1{
+        padding-top: 12px;
+    }
+    .main0{
+       padding-left: 19px;
+    }
+    .bg-table{
+        background: white;
+    }
+    .table-head{
+        // height: 12%;
+        background-color: rgb(238, 190, 253);
+        align-items: center;
+        border:1pt solid rgb(53, 53, 53);
+        padding : 0px;
+        
+    }
+    .col1-main{
+        border-left:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+    }
+    .col1-main-spe-l{
+        border-left:1pt solid rgb(53, 53, 53);
+        border-right:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+
+    }
+    .col1-main-spe-s{
+        align-items: center;
+        text-align: center;
+    }
+    .col0-main{
+        align-items: center;
+        text-align: center;
+    }
+    .grid-table{
+        padding-top: 14px;
+    }
+    .table-main{
+        align-items: center;
+        border-left:1pt solid rgb(53, 53, 53);
+        border-bottom:1pt solid rgb(53, 53, 53);
+        border-right:1pt solid rgb(53, 53, 53);
+        padding : 0px;
+    }
+    .col0-main1{
+        align-items: center;
+        text-align: center;
+        background-color: rgb(190, 248, 188);
+
+    }
+    .col1-main1{
+        background-color: rgb(248, 234, 188);
+        border-left:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+    }
+    .col1-main2{
+        background-color: rgb(248, 188, 188);
+        border-left:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+    }
+    .col1-main3{
+        background-color: rgb(188, 248, 248);
+        border-left:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+    }
+    .spe0{
+        margin-bottom: 0px;
+    }
+    .spe1{
+        margin-top: 0px;
+    }
+    .bg-main{
+        background-color: rgb(245, 245, 245);
+        border: none;
+        // padding: 5px;
+        border-radius: 15px;
+    }
+    .topic0{
+        padding-left: 5px;
+        padding-top: 12px;
+    }
+    .topic-table{
+        padding-top: 15px;
+    }
+}

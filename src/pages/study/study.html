@@ -37,7 +37,13 @@
           </ion-row>
         <hr class="hr-head">
     </ion-grid>
-
+    <ion-grid class="grid-btn">
+      <ion-row no-padding>
+        <ion-col no-padding col-12 class="col-btn"> 
+            <button ion-button style="width: 40px; height: 30px;" color="info" (click)="goToMenuPage()"> <ion-icon large style="margin-bottom: 2px" ios="md-menu" md="md-menu" name="menu"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
     <ion-grid *ngFor="let verQ of varQues">
         <ion-grid padding class="grid-head">
           <ion-grid>
@@ -69,5 +75,12 @@
     
         </ion-grid>
       </ion-grid>  
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 class="col-btn-last"> 
+              <button ion-button style="width: 89px; height: 38px; margin-right: 7px;" color="info" (click)="goToMenuPage()">Menu</button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

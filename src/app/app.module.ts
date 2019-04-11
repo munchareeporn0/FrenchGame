@@ -1,3 +1,4 @@
+import { ConditionnelpassePage } from './../pages/conditionnelpasse/conditionnelpasse';
 import { AnswerPage } from './../pages/answer/answer';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -38,6 +39,7 @@ import { InterrogatifPage } from './../pages/interrogatif/interrogatif';
 import { PossessivePage } from './../pages/possessive/possessive';
 import { Demonstratifs1Page } from '../pages/demonstratifs1/demonstratifs1';
 import { StudyModePage } from '../pages/study-mode/study-mode';
+import { FutursimplePage } from '../pages/futursimple/futursimple';
 
 
 
@@ -64,7 +66,9 @@ import { StudyModePage } from '../pages/study-mode/study-mode';
     PossessivePage,
     AnswerPage,
     Demonstratifs1Page,
-    StudyModePage
+    StudyModePage,
+    ConditionnelpassePage,
+    FutursimplePage
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,9 @@ import { StudyModePage } from '../pages/study-mode/study-mode';
     PossessivePage,
     AnswerPage,
     Demonstratifs1Page,
-    StudyModePage
+    StudyModePage,
+    ConditionnelpassePage,
+    FutursimplePage
   ],
   providers: [
     StatusBar,

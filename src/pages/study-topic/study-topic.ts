@@ -1,3 +1,4 @@
+import { FutursimplePage } from './../futursimple/futursimple';
 import { PossessivePage } from './../possessive/possessive';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , Platform} from 'ionic-angular';
@@ -8,6 +9,7 @@ import { AlertController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
 import { InterrogatifPage } from '../interrogatif/interrogatif';
 import { Demonstratifs1Page } from '../demonstratifs1/demonstratifs1';
+import { ConditionnelpassePage } from '../conditionnelpasse/conditionnelpasse';
 
 /**
  * Generated class for the StudyTopicPage page.
@@ -76,6 +78,16 @@ export class StudyTopicPage {
       });
     }else if(_topic == 'demonstratifs2'){
       this.navCtrl.push(Demonstratifs1Page,{
+        topic : _topic,
+        label : _label
+      });
+    }else if(_topic == 'conditionnelpasse'){
+      this.navCtrl.push(ConditionnelpassePage,{
+        topic : _topic,
+        label : _label
+      });
+    }else if(_topic == 'futursimple'){
+      this.navCtrl.push(FutursimplePage,{
         topic : _topic,
         label : _label
       });

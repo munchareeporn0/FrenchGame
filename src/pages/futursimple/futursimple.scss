@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Prompt', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Prompt');
+}
+page-futursimple {
+    h5,
+    h6{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: 'Prompt', sans-serif !important;
+    }
+    .topic1{
+        padding-top: 12px;
+    }
+    .topic-center{
+        padding-top: 12px;
+        align-items: center;
+        text-align: center;
+    }
+    .main1{
+        padding-left: 25px;
+     }
+    .col-btn{
+        float: right;
+        text-align: right;
+     }
+    .grid-table{
+        padding-top: 8px;
+    }
+    .bg-table{
+        background: rgb(214, 221, 255);
+    }
+    .table-head{
+        align-items: center;
+        border:1pt solid rgb(53, 53, 53);
+        padding : 0px;
+        
+    }
+    .text-topic{
+        text-align: center;
+    }
+    .col1-main{
+        border-left:1pt solid rgb(53, 53, 53);
+        align-items: center;
+        text-align: center;
+    }
+    .col0-main{
+        align-items: center;
+        text-align: center;
+    }
+}
