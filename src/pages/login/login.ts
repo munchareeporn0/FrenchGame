@@ -233,7 +233,7 @@ export class LoginPage {
           this.storage.set(key_correct,this.data[topic[i]][temp]); 
         }   
       }
-      this.storage.set('correct_status',1);
+      this.storage.set('correct_status',2);
     });
 
     name = this.data['firstname_EN'].concat(' ', this.data['lastname_EN']);
