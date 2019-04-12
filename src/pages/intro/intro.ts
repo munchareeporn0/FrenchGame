@@ -71,7 +71,6 @@ export class IntroPage {
           }
           this.http.post("https://us-central1-frenchgame-228900.cloudfunctions.net/getQuestions", postParams, requestOptions).map(res => res.json())
           .subscribe(res => {
-            console.log(res)  
             this.data = res;
             this.storage.set(`${i}_${level}`,this.data);  
           }),err =>{
