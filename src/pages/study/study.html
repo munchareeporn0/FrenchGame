@@ -66,7 +66,7 @@
                 <h6 style="color: rgb(23, 163, 18)"><b>Answer :</b> {{verQ.correctChoice}} </h6>
             </ion-row>
             <ion-row *ngIf="verQ.check == 1">
-                <h6><b>คำอธิบาย :</b> {{verQ.description}} </h6>
+               <h6> <b>คำอธิบาย :</b>  <span [innerHTML]="verQ.description"></span></h6>
             </ion-row>
             <ion-row *ngIf="verQ.check == 0">
                 <h6 style="color: rgb(121, 124, 121)"><b>&nbsp;-</b></h6>
