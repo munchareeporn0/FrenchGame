@@ -56,7 +56,6 @@ export class IntroPage {
 
     this.httpClient.get('https://us-central1-frenchgame-228900.cloudfunctions.net/getTopics')
     .subscribe((data) => {
-      console.log(data)
       this.data = data;
       this.storage.set('topic',this.data); 
       // this.size = Object.keys(this.data).length;
