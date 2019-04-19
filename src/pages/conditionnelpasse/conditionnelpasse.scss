@@ -2,7 +2,14 @@
     font-family: 'Prompt', sans-serif;
     @import url('https://fonts.googleapis.com/css?family=Prompt');
 }
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+}
 page-conditionnelpasse {
+    p{
+        font-family: 'Montserrat', sans-serif;
+    }
     h5,
     h6{
         margin-top: 0px;
@@ -33,6 +40,10 @@ page-conditionnelpasse {
     }
     .bg-table{
         background: white;
+        position: relative;
+    }
+    .col-customTTP { 
+        height: 100%;
     }
     .table-head{
         // height: 12%;
@@ -53,6 +64,14 @@ page-conditionnelpasse {
         align-items: center;
         text-align: center;
 
+    }
+    .detail-top-spe{
+        margin-bottom: 14px;
+        margin-top: 14px;
+    }
+    .detail-top{
+        padding-bottom: 8px;
+        padding-top: 8px;
     }
     .col1-main-spe-s{
         align-items: center;
