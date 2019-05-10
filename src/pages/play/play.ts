@@ -306,6 +306,7 @@ export class PlayPage {
             }
             this.person[i].rank = i + 1;
           }
+          
 
           let size = this._correct.length + this._wrong.length;
           let check_answer:any[] = new Array(size);

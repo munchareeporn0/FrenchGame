@@ -35,7 +35,6 @@ export class RankingPage {
     this.cmuacc   = navParams.get('cmuitaccount_name');
     this.size     = navParams.get('size_choice');
     this.avatar   = navParams.get('avatar');
-
   }
 
   ionViewDidLoad() {

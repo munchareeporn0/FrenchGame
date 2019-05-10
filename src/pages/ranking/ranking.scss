@@ -26,6 +26,9 @@ page-ranking {
             border-radius: 50%;
         }
     }
+    ion-img.img-unloaded img {
+        display: block;
+    }
  
     @media only screen and (max-width: 375px) {
         h6 {
